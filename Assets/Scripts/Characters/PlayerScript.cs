@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -12,14 +13,17 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private bool hasInput = false;
+    private bool isStoping = false;
     private readonly float movementCheckDistance = 1.5f;
     private readonly float collisionCheckDistance = 1f;
     private readonly float playerSpeed = 15f;
+    private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        targetPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -37,58 +41,68 @@ public class PlayerMovement : MonoBehaviour
                 playerStartPosition = transform.position;
                 hasInput = true;
             }
+        } else if (isStoping){
+            if((transform.position - targetPosition).magnitude <= .1f) {
+                hasInput = false;
+            }
         }
     }
 
     private void FixedUpdate() {
         if (hasInput) {
             if (endTouchPosition.y > startTouchPosition.y && endTouchPosition.x > startTouchPosition.x) {
-                Debug.Log("Moving South West");
+                // Debug.Log("Moving South West");
                 
                 if (CheckCollision(Vector3.left) && CheckMovement(Vector3.forward, Vector3.back)) {
                     MoveSouthWest();
-                    Debug.Log("Moved player: " + transform.position);
+                    // Debug.Log("Moved player: " + transform.position);
                 } else {
                     hasInput = false;
                     rigidBody.velocity = Vector3.zero;
-                    Debug.Log("Collision detected in South West");
+                    // Debug.Log("Collision detected in South West");
                 }
             }
             else if (endTouchPosition.y > startTouchPosition.y && endTouchPosition.x < startTouchPosition.x) {
-                Debug.Log("Moving South East");
+                // Debug.Log("Moving South East");
                 
                 if (CheckCollision(Vector3.back) && CheckMovement(Vector3.left, Vector3.right)) {
                     MoveSouthEast();
-                    Debug.Log("Moved player: " + transform.position);
+                    // Debug.Log("Moved player: " + transform.position);
                 } else {
                     hasInput = false;
                     rigidBody.velocity = Vector3.zero;
-                    Debug.Log("Collision detected in South East");
+                    // Debug.Log("Collision detected in South East");
                 }
             }
             else if (endTouchPosition.y < startTouchPosition.y && endTouchPosition.x > startTouchPosition.x) {
-                Debug.Log("Moving North West");
+                // Debug.Log("Moving North West");
                 
                 if (CheckCollision(Vector3.forward) && CheckMovement(Vector3.left, Vector3.right)) {
                     MoveNorthWest();
-                    Debug.Log("Moved player: " + transform.position);
+                    // Debug.Log("Moved player: " + transform.position);
                 } else {
                     hasInput = false;
                     rigidBody.velocity = Vector3.zero;
-                    Debug.Log("Collision detected in North West");
+                    // Debug.Log("Collision detected in North West");
                 }
             }
             else if (endTouchPosition.y < startTouchPosition.y && endTouchPosition.x < startTouchPosition.x) {
-                Debug.Log("Moving North East");
+                // Debug.Log("Moving North East");
 
                 if (CheckCollision(Vector3.right) && CheckMovement(Vector3.forward, Vector3.back)) {
                     MoveNorthEast();
-                    Debug.Log("Moved player: " + transform.position);
+                    // Debug.Log("Moved player: " + transform.position);
                 } else {
                     hasInput = false;
                     rigidBody.velocity = Vector3.zero;
-                    Debug.Log("Collision detected in North East");
+                    // Debug.Log("Collision detected in North East");
                 }
+            }
+        } else {
+            rigidBody.velocity = Vector3.zero;
+            if(isStoping) {
+                transform.position = targetPosition;
+                isStoping = false;
             }
         }
     }
@@ -103,6 +117,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.CompareTag("Branch")) {
+            targetPosition = col.gameObject.transform.position;
+            isStoping = true;
+        }
     }
 
     private bool CheckMovement(Vector3 directionOne, Vector3 directionTwo) {
