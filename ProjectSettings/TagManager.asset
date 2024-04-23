@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Building
+  - Branch
   layers:
   - Default
   - TransparentFX
