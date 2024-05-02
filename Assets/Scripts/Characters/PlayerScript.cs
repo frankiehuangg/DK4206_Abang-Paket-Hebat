@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private bool hasInput = false;
-    private bool isStoping = false;
+    public bool isStoping = false;
     private readonly float movementCheckDistance = 1.5f;
     private readonly float collisionCheckDistance = 1f;
     private readonly float playerSpeed = 15f;

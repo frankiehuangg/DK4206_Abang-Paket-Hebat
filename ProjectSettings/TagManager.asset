@@ -7,6 +7,10 @@ TagManager:
   - Wall
   - Building
   - Branch
+  - PackageSpwan
+  - Destination
+  - PackageSpawn
+  - Package
   layers:
   - Default
   - TransparentFX
