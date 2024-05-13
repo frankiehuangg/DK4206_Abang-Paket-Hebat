@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class RandomSprite : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
+    public string[] spriteDescriptions;
+    public string currentSpriteDescription;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -14,11 +16,13 @@ public class RandomSprite : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         ChangeSprite();
-        Console.WriteLine("test");
     }
 
     void ChangeSprite()
     {
-        spriteRenderer.sprite = sprites[UnityEngine.Random.Range(0, sprites.Length)];
+        int index = UnityEngine.Random.Range(0, sprites.Length);
+
+        spriteRenderer.sprite = sprites[index];
+        currentSpriteDescription = spriteDescriptions[index];
     }
 }
