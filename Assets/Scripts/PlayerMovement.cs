@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movement;
     private float currentSpeed;
     private bool hasInput = false;
-    private bool isStoping = true;
+    public bool isStoping = true;
 
     private void Awake()
     {
