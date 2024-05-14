@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3054576351769879713}
   - component: {fileID: 546694142607956185}
   - component: {fileID: 1209549237123606603}
+  - component: {fileID: 7897683092897024696}
   m_Layer: 7
   m_Name: Asset
   m_TagString: Untagged
@@ -108,6 +109,23 @@ MonoBehaviour:
   - tembok biru, atap oranye, 1 jendela
   - tembok hijau, atap oranye, 1 jendela
   currentSpriteDescription: 
+--- !u!114 &7897683092897024696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526728842108758789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4e73298402db6448661e3427e03afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tembok: 
+  atap: 
+  jendela: 0
+  view: 
+  spriteIndex: 0
 --- !u!1 &2597305834119326028
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GenerateMap : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class GenerateMap : MonoBehaviour
     public GameObject[] backHomePrefab;
     public GameObject[] leftHomePrefab;
     public GameObject[] rightHomePrefab;
+
+    public RandomPackageSpawn packageSpawner;
 
     private Vector3[] frontHomeLocation = {
         new(-17, 1.5f, -8),
@@ -86,26 +91,52 @@ public class GenerateMap : MonoBehaviour
         new(14, 1.5f, -15),
     };
 
+    private Vector3[] destinationLocation =
+    {
+        new(-17, 1.5f, -8),
+        new(-14, 1.5f, -9),
+        new(-15, 1.5f, 6),
+        new(-17, 1.5f, -5),
+    };
+
     void Start()
     {
         System.Random random = new();
+        GameObject temp;
 
         foreach (Vector3 location in leftHomeLocation)
         {
-            Instantiate(frontHomePrefab[random.Next(0, frontHomePrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(frontHomePrefab[random.Next(0, frontHomePrefab.Length)], location, Quaternion.identity);
+            if (destinationLocation.Contains<Vector3>(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
         foreach (Vector3 location in rightHomeLocation)
         {
-            Instantiate(backHomePrefab[random.Next(0, backHomePrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(backHomePrefab[random.Next(0, backHomePrefab.Length)], location, Quaternion.identity);
+            if (destinationLocation.Contains<Vector3>(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
         foreach (Vector3 location in backHomeLocation)
         {
-            Instantiate(leftHomePrefab[random.Next(0, leftHomePrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(leftHomePrefab[random.Next(0, leftHomePrefab.Length)], location, Quaternion.identity);
+            if (destinationLocation.Contains<Vector3>(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
         foreach (Vector3 location in frontHomeLocation)
         {
-            Instantiate(rightHomePrefab[random.Next(0, rightHomePrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(rightHomePrefab[random.Next(0, rightHomePrefab.Length)], location, Quaternion.identity);
+            if (destinationLocation.Contains<Vector3>(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
+
     }
 
     void Update()

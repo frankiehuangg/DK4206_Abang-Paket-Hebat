@@ -9,11 +9,13 @@ public class RandomSprite : MonoBehaviour
     public string[] spriteDescriptions;
     public string currentSpriteDescription;
     private SpriteRenderer spriteRenderer;
+    private Building building;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        building = GetComponent<Building>();
 
         ChangeSprite();
     }
@@ -24,5 +26,7 @@ public class RandomSprite : MonoBehaviour
 
         spriteRenderer.sprite = sprites[index];
         currentSpriteDescription = spriteDescriptions[index];
+        building.spriteIndex = index;
+        building.SetDescription();
     }
 }
