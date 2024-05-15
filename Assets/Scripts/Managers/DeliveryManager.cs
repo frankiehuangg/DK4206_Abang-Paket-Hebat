@@ -18,6 +18,7 @@ public class DeliveryManager : MonoBehaviour
     public GameObject destination;
     public PlayerMovement playerMovement;
     public GameObject phone;
+    public GameObject currentPackage;
 
     private void Awake()
     {
@@ -57,7 +58,14 @@ public class DeliveryManager : MonoBehaviour
         Spawn();
     }
 
-    
+    public void GameOver()
+    {
+        isPlaying = false;
+        if (currentPackage != null)
+        {
+            Destroy(currentPackage);
+        }
+    }
 
     private void Spawn()
     {
@@ -65,7 +73,7 @@ public class DeliveryManager : MonoBehaviour
         {
             Vector3 spawnPosition = possiblePosition[UnityEngine.Random.Range(0, possiblePosition.Length)].transform.position;
             spawnPosition.y = 1;
-            Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
+            currentPackage = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
             isSpawning = true;
         }
         else
@@ -96,12 +104,16 @@ public class DeliveryManager : MonoBehaviour
         destination = null;
         SetDescriptionOnPhone();
         isDelivering = false;
+
+        GameManager.instance.score += 100;
+        GameManager.instance.delivered += 1;
     }
 
     public void OnFoundPackage()
     {
         destination = RandomizeDestination();
         SetDescriptionOnPhone();
+        currentPackage = null;
 
         isDelivering = true;
         isSpawning = false;

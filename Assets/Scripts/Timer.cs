@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float currentTime;
     public bool countDown;
+    public float startTime;
 
     public bool hasLimit;
     public float timerLimit;
@@ -41,6 +42,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
+        ResetTimer();
         timerStarted = true;
     }
 
@@ -52,5 +54,11 @@ public class Timer : MonoBehaviour
         timerText.color = Color.red;
 
         GameManager.instance.GameOver();
+    }
+
+    public void ResetTimer()
+    {
+        currentTime = startTime;
+        timerText.color = Color.white;
     }
 }
