@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,11 +15,14 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
+    private Vector3 targetPosition;
+
 
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         currentSpeed = defaultSpeed;
+        targetPosition = transform.position;
     }
 
     private void Update()
@@ -62,5 +66,23 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.velocity = Vector3.zero;
             hasInput = false;
         }
+
+        else if (isStoping)
+        {
+            if ((transform.position - targetPosition).magnitude <= .1f)
+            {
+                hasInput = false;
+            }
+        }
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Branch"))
+        {
+            targetPosition = col.gameObject.transform.position;
+            isStoping = true;
+        }
+    }
+
 }
