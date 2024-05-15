@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
+    public float stopingConstraint = 1.2f;
     private Vector3 targetPosition;
 
 
@@ -36,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
         {
             endPosition = Input.GetTouch(0).position;
             hasInput = true;
+        }
+        if (isStoping)
+        {
+            if ((transform.position - targetPosition).magnitude <= stopingConstraint)
+            {
+                hasInput = false;
+            }
         }
     }
 
@@ -59,20 +67,20 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerRigidbody.velocity = new Vector3(currentSpeed, 0, 0);
             }
+        } else
+        {
+            playerRigidbody.velocity = Vector3.zero;
+            if (isStoping)
+            {
+                transform.position = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+                isStoping = false;
+            }
         }
 
         if (playerRigidbody.velocity.magnitude < minForceMagnitude)
         {
             playerRigidbody.velocity = Vector3.zero;
             hasInput = false;
-        }
-
-        else if (isStoping)
-        {
-            if ((transform.position - targetPosition).magnitude <= .1f)
-            {
-                hasInput = false;
-            }
         }
     }
 
