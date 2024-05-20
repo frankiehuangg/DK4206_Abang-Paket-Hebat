@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8319317631095554016}
-  - component: {fileID: 5270799602038845696}
-  - component: {fileID: 2135803270829942546}
-  - component: {fileID: 2813752493215552172}
-  - component: {fileID: 9210557119767632862}
+  - component: {fileID: 7624474970273165324}
+  - component: {fileID: 2191559616743986145}
+  - component: {fileID: 4133080525543214240}
+  - component: {fileID: 6947730719916199215}
   m_Layer: 6
   m_Name: Road Right Mid
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_GameObject: {fileID: 5865396372270529521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.05, z: 0}
+  m_LocalPosition: {x: 1, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5270799602038845696
+--- !u!33 &7624474970273165324
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5865396372270529521}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2135803270829942546
+--- !u!23 &2191559616743986145
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c2389aba0e6c02edaa63f97c6eb9960b, type: 2}
+  - {fileID: 2100000, guid: fe292aeabef575266abeba403dcb25de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2813752493215552172
+--- !u!65 &4133080525543214240
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &9210557119767632862
+--- !u!64 &6947730719916199215
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
