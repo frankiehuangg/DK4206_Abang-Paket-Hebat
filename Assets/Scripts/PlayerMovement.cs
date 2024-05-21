@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isStoping = true;
     public float stopingConstraint = 1.2f;
     private Vector3 targetPosition;
+    [SerializeField] private Animator animator;
 
 
     private void Awake()
@@ -53,19 +54,27 @@ public class PlayerMovement : MonoBehaviour
         {
             if (endPosition.y > startPosition.y && endPosition.x > startPosition.x)
             {
+                animator.SetBool("isMoving", true);
+                animator.SetInteger("rLTB", 1);
                 playerRigidbody.velocity = new Vector3(-currentSpeed, 0, 0);
             }
             else if (endPosition.y > startPosition.y && endPosition.x < startPosition.x)
             {
+                animator.SetBool("isMoving", true);
+                animator.SetInteger("rLTB", 0);
                 playerRigidbody.velocity = new Vector3(0, 0, -currentSpeed);
             }
             else if (endPosition.y < startPosition.y && endPosition.x > startPosition.x)
             {
+                animator.SetBool("isMoving", true);
+                animator.SetInteger("rLTB", 3);
                 playerRigidbody.velocity = new Vector3(0, 0, currentSpeed);
             }
             else if (endPosition.y < startPosition.y && endPosition.x < startPosition.x)
             {
                 playerRigidbody.velocity = new Vector3(currentSpeed, 0, 0);
+                animator.SetBool("isMoving", true);
+                animator.SetInteger("rLTB", 2);
             }
         } else
         {
@@ -74,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.position = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
                 isStoping = false;
+                animator.SetBool("isMoving", false);
             }
         }
 
@@ -81,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRigidbody.velocity = Vector3.zero;
             hasInput = false;
+            animator.SetBool("isMoving", false);
         }
     }
 
