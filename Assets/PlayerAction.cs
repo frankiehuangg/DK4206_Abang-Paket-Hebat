@@ -6,6 +6,7 @@ public class PlayerAction : MonoBehaviour
 {
     public GameObject destination;
     public PlayerMovement playerMovement;
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class PlayerAction : MonoBehaviour
             {
                 if (collider.transform.parent != null && collider.transform.parent.gameObject == destination)
                 {
-                    Debug.Log("Arrive");
+                    animator.SetBool("isDelivering", false);
                     destination = null;
                     DeliveryManager.instance.OnArrive();
                     break;
@@ -41,7 +42,7 @@ public class PlayerAction : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Package"))
         {
-            Debug.Log("Found");
+            animator.SetBool("isDelivering", true);
             DeliveryManager.instance.OnFoundPackage();
             Destroy(collision.gameObject);
             
