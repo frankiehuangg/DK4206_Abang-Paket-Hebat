@@ -55,26 +55,26 @@ public class PlayerMovement : MonoBehaviour
             if (endPosition.y > startPosition.y && endPosition.x > startPosition.x)
             {
                 animator.SetBool("isMoving", true);
-                animator.SetInteger("rLTB", 1);
-                playerRigidbody.velocity = new Vector3(-currentSpeed, 0, 0);
+                animator.SetInteger("rLTB", 2);
+                playerRigidbody.velocity = new Vector3(currentSpeed, 0, 0);
             }
             else if (endPosition.y > startPosition.y && endPosition.x < startPosition.x)
-            {
-                animator.SetBool("isMoving", true);
-                animator.SetInteger("rLTB", 0);
-                playerRigidbody.velocity = new Vector3(0, 0, -currentSpeed);
-            }
-            else if (endPosition.y < startPosition.y && endPosition.x > startPosition.x)
             {
                 animator.SetBool("isMoving", true);
                 animator.SetInteger("rLTB", 3);
                 playerRigidbody.velocity = new Vector3(0, 0, currentSpeed);
             }
+            else if (endPosition.y < startPosition.y && endPosition.x > startPosition.x)
+            {
+                animator.SetBool("isMoving", true);
+                animator.SetInteger("rLTB", 0);
+                playerRigidbody.velocity = new Vector3(0, 0, -currentSpeed);
+            }
             else if (endPosition.y < startPosition.y && endPosition.x < startPosition.x)
             {
-                playerRigidbody.velocity = new Vector3(currentSpeed, 0, 0);
+                playerRigidbody.velocity = new Vector3(-currentSpeed, 0, 0);
                 animator.SetBool("isMoving", true);
-                animator.SetInteger("rLTB", 2);
+                animator.SetInteger("rLTB", 1);
             }
         } else
         {
