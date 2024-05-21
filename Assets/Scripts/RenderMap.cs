@@ -37,9 +37,15 @@ public class RenderMap : MonoBehaviour
          * Left -> Front
          */
 
+        GameObject temp;
+
         foreach (Vector3 location in MapData.HomeCubeFrontLocations)
         {
-            Instantiate(HomeCubeRightPrefab[random.Next(0, HomeCubeRightPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeRightPrefab[random.Next(0, HomeCubeRightPrefab.Length)], location, Quaternion.identity);
+            if (location == new Vector3(-30f, 1.5f, -17f))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
 
         foreach (Vector3 location in MapData.HomeCubeBackLocations)
