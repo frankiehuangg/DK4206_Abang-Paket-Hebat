@@ -13,7 +13,6 @@ public class TallHomeRight : Building
             case 0:
                 this.tembok = "Kuning";
                 this.atap = "Oranye";
-                this.jendela = 1;
                 break;
             default:
                 break;

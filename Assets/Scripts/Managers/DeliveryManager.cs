@@ -112,7 +112,7 @@ public class DeliveryManager : MonoBehaviour
     public void OnFoundPackage()
     {
         destination = RandomizeDestination();
-        //SetDescriptionOnPhone();
+        SetDescriptionOnPhone();
         currentPackage = null;
 
         isDelivering = true;

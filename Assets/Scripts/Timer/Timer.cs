@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     public bool timerStarted = false;
 
-    public TextMeshProUGUI timerText;
+    //public TextMeshProUGUI timerText;
     public float currentTime;
     public bool countDown;
     public float startTime;
@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
-        SetTimerText();
+        //SetTimerText();
     }
 
     // Update is called once per frame
@@ -31,13 +31,13 @@ public class Timer : MonoBehaviour
             {
                 TimerOver();
             }
-            SetTimerText();
+            //SetTimerText();
         }
     }
 
     private void SetTimerText()
     {
-        timerText.text = currentTime.ToString("0.00");
+        //timerText.text = currentTime.ToString("0.00");
     }
 
     public void StartTimer()
@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
         currentTime = timerLimit;
         SetTimerText();
         timerStarted = false;
-        timerText.color = Color.red;
+        //timerText.color = Color.red;
 
         GameManager.instance.GameOver();
     }
@@ -59,6 +59,6 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         currentTime = startTime;
-        timerText.color = Color.white;
+        //timerText.color = Color.white;
     }
 }

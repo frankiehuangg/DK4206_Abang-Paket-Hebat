@@ -170,4 +170,14 @@ public static class MapData
     public static Vector3[] LargeShopRightLocations = {
         new(-8f, 1.5f, 24f),
     };
+
+    public static Vector3[] destinationLocations = {
+        new(-8f, 1.5f, 16f),
+        new(28f, 1.5f, 28f),
+        new(-20f, 1.5f, -8f),
+        new(1f, 1.5f, 25f),
+        new(4f, 1.5f, -12f),
+        new(-30f, 1.5f, -13f),
+        new(27f, 1.5f, 22f),
+    };
 }

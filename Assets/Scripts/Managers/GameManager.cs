@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        StartGame();
        
     }
 
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         if (isPlaying)
         {
-            SetTextOnPlay();
+            //SetTextOnPlay();
         }
     }
 

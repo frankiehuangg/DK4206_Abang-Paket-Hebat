@@ -6,8 +6,8 @@ public abstract class Building : MonoBehaviour
 {
     public string tembok;
     public string atap;
-    public int jendela;
     public string view;
+    public string[] decorations;
 
     public int spriteIndex;
 
@@ -15,8 +15,8 @@ public abstract class Building : MonoBehaviour
     {
         tembok = "None";
         atap = "None";
-        jendela = 0;
         view = "None";
+        decorations = new string[3];
     }
 
     public abstract void SetDescription();

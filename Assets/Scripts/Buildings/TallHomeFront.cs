@@ -13,7 +13,6 @@ public class TallHomeFront : Building
             case 0:
                 this.tembok = "Pink";
                 this.atap = "Oranye";
-                this.jendela = 2;
                 break;
             default:
                 break;

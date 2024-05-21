@@ -234,6 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2680431567912347038}
+  - component: {fileID: 2924530094297798940}
   m_Layer: 5
   m_Name: Phone
   m_TagString: Untagged
@@ -261,6 +262,49 @@ RectTransform:
   m_AnchoredPosition: {x: 689, y: -307}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2924530094297798940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712316483747914100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7797584fd550a468c9ab16794ae947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phoneScreen: {fileID: 2712316483747914100}
+  buildingDescription: {fileID: 0}
+  houseRoofSprites:
+  - {fileID: 21300000, guid: c1bad4a8108ea2c46a6fcb1c8f3dfc3d, type: 3}
+  - {fileID: 21300000, guid: 6979270edbea42949983f1c529347e32, type: 3}
+  - {fileID: 21300000, guid: 70ac2545f96071f468d8fda1bd8bf918, type: 3}
+  - {fileID: 21300000, guid: 652796b3cff4d604fa54cef6095dae88, type: 3}
+  houseBodySprites:
+  - {fileID: 21300000, guid: 0b04e6b8bec17044b853a2736a4fad0c, type: 3}
+  - {fileID: 21300000, guid: 4c0d2cc68ebd45d4e950fb02c67869e2, type: 3}
+  - {fileID: 21300000, guid: 0e3a7f6396f4c9248a16de16d071f73c, type: 3}
+  - {fileID: 21300000, guid: 2d1ba5fd71a929348a31c623034a44b9, type: 3}
+  houseDirectionSprites:
+  - {fileID: 21300000, guid: 21ab81e119ee6e84083780194ffb4b8a, type: 3}
+  - {fileID: 21300000, guid: adb9ded097491d04ebc029415059043a, type: 3}
+  - {fileID: 21300000, guid: 9bb2d0cd93acad04f9a836c2c9c89749, type: 3}
+  - {fileID: 21300000, guid: 2ffd4bb68913bc941958d7a64d70651b, type: 3}
+  houseDecorationSprites:
+  - {fileID: 21300000, guid: d8db7483a54415c448fa46df1fb08670, type: 3}
+  - {fileID: 21300000, guid: 30d36d1496f61e04d9ada5202015745b, type: 3}
+  - {fileID: 21300000, guid: 3d56e5f293b681944b868c3054150d7b, type: 3}
+  - {fileID: 21300000, guid: d135f24624fa125419d76361e2e31603, type: 3}
+  - {fileID: 21300000, guid: 8052704a129443a44bf488e1888f5050, type: 3}
+  - {fileID: 21300000, guid: 407fc46c38d878442822626409c4fe65, type: 3}
+  houseRoofImage: {fileID: 3213501783240912288}
+  houseBodyImage: {fileID: 2375176516158381923}
+  houseDirectionImage: {fileID: 2417871777482242535}
+  houseDecorationImages:
+  - {fileID: 4468016407761518963}
+  - {fileID: 5381283657912604735}
+  - {fileID: 6487085990380245848}
 --- !u!1 &4549331023183203943
 GameObject:
   m_ObjectHideFlags: 0

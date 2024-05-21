@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class RenderMap : MonoBehaviour
@@ -42,7 +43,7 @@ public class RenderMap : MonoBehaviour
         foreach (Vector3 location in MapData.HomeCubeFrontLocations)
         {
             temp = Instantiate(HomeCubeRightPrefab[random.Next(0, HomeCubeRightPrefab.Length)], location, Quaternion.identity);
-            if (location == new Vector3(-30f, 1.5f, -17f))
+            if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
             }
@@ -50,17 +51,29 @@ public class RenderMap : MonoBehaviour
 
         foreach (Vector3 location in MapData.HomeCubeBackLocations)
         {
-            Instantiate(HomeCubeLeftPrefab[random.Next(0, HomeCubeLeftPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeLeftPrefab[random.Next(0, HomeCubeLeftPrefab.Length)], location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
 
         foreach (Vector3 location in MapData.HomeCubeLeftLocations)
         {
-            Instantiate(HomeCubeFrontPrefab[random.Next(0, HomeCubeFrontPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeFrontPrefab[random.Next(0, HomeCubeFrontPrefab.Length)], location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
 
         foreach (Vector3 location in MapData.HomeCubeRightLocations)
         {
-            Instantiate(HomeCubeBackPrefab[random.Next(0, HomeCubeBackPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeBackPrefab[random.Next(0, HomeCubeBackPrefab.Length)], location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
     }
 }

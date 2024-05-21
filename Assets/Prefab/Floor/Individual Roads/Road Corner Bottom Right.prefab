@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3934525797273723028}
   m_Layer: 6
   m_Name: Road Corner Bottom Right
-  m_TagString: Untagged
+  m_TagString: Walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
