@@ -19,6 +19,7 @@ public class DeliveryManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public GameObject phone;
     public GameObject currentPackage;
+    public Compass compass;
 
     private void Awake()
     {
@@ -49,18 +50,28 @@ public class DeliveryManager : MonoBehaviour
             {
                 Spawn();
             }
+            if (isDelivering)
+            {
+                compass.currentObject = destination;
+            }
+            if (isSpawning)
+            {
+                compass.currentObject = currentPackage;
+            }
         }
     }
 
     public void GameStart()
     {
         isPlaying = true;
+        compass.isPlaying = true;
         Spawn();
     }
 
     public void GameOver()
     {
         isPlaying = false;
+        compass.isPlaying = false;
         if (currentPackage != null)
         {
             Destroy(currentPackage);
