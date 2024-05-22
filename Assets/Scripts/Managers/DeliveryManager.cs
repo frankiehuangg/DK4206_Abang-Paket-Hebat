@@ -20,6 +20,7 @@ public class DeliveryManager : MonoBehaviour
     public GameObject phone;
     public GameObject currentPackage;
     public Compass compass;
+    public ProgressBar progressBar;
 
     private void Awake()
     {
@@ -114,6 +115,7 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = null;
         SetDescriptionOnPhone();
+        progressBar.destination = null;
         isDelivering = false;
 
         GameManager.instance.score += 100;
@@ -124,6 +126,7 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = RandomizeDestination();
         SetDescriptionOnPhone();
+        progressBar.destination = destination;
         currentPackage = null;
 
         isDelivering = true;
