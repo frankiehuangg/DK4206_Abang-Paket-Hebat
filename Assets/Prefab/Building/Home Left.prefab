@@ -236,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 8609113576472952975}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -1.2, y: 0.4, z: -1.4}
+  m_LocalPosition: {x: -0.8, y: 0.4, z: -0.8}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -333,6 +333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tembok: 
   atap: 
-  jendela: 0
   view: 
+  decorations: []
   spriteIndex: 0

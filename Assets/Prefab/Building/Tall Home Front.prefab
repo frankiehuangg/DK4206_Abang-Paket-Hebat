@@ -183,8 +183,8 @@ Transform:
   m_GameObject: {fileID: 5131703139875248054}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -0.5, y: 0.7, z: -0.5}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -0.6, y: 0.7, z: -0.6}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3211871322534561563}
@@ -255,6 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 99a8d7c4dfe5bdf9db9aa223df77efaf, type: 3}
+  - {fileID: 21300000, guid: a24a2823c6363104197a54da767fd09e, type: 3}
+  - {fileID: 21300000, guid: 89db98ec62faa5513bff7a59fa497931, type: 3}
   spriteDescriptions:
   - tembok pink, atap oranye, 2 jendela, 2 tingkat
   currentSpriteDescription: 
@@ -272,8 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tembok: 
   atap: 
-  jendela: 0
   view: 
+  decorations: []
   spriteIndex: 0
 --- !u!1 &5597082854400906883
 GameObject:
