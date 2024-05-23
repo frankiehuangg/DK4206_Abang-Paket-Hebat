@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float defaultSpeed = 20f;
+    public float defaultSpeed = 50f;
 
     private float minForceMagnitude = 0.1f;
 
     private Rigidbody playerRigidbody;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    private Vector3 movement;
     private float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
@@ -31,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!hasInput){
+        if (!hasInput)
+        {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 startPosition = Input.GetTouch(0).position;
@@ -60,27 +60,40 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("isMoving", true);
                 animator.SetInteger("rLTB", 2);
-                playerRigidbody.velocity = new Vector3(currentSpeed, 0, 0);
+
+                Vector3 targetPosition = transform.position + Vector3.right * 100;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
             }
             else if (endPosition.y > startPosition.y && endPosition.x < startPosition.x && branch.T)
             {
                 animator.SetBool("isMoving", true);
                 animator.SetInteger("rLTB", 3);
-                playerRigidbody.velocity = new Vector3(0, 0, currentSpeed);
+
+                Vector3 targetPosition = transform.position + Vector3.forward * 100;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
             }
             else if (endPosition.y < startPosition.y && endPosition.x > startPosition.x && branch.B)
             {
                 animator.SetBool("isMoving", true);
                 animator.SetInteger("rLTB", 0);
-                playerRigidbody.velocity = new Vector3(0, 0, -currentSpeed);
+
+                Vector3 targetPosition = transform.position + Vector3.back * 100;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
             }
             else if (endPosition.y < startPosition.y && endPosition.x < startPosition.x && branch.L)
             {
-                playerRigidbody.velocity = new Vector3(-currentSpeed, 0, 0);
                 animator.SetBool("isMoving", true);
                 animator.SetInteger("rLTB", 1);
+
+                Vector3 targetPosition = transform.position + Vector3.left * 100;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
             }
-        } else
+            else
+            {
+                hasInput = false;
+            }
+        }
+        else
         {
             playerRigidbody.velocity = Vector3.zero;
             if (isStoping)
@@ -89,13 +102,6 @@ public class PlayerMovement : MonoBehaviour
                 isStoping = false;
                 animator.SetBool("isMoving", false);
             }
-        }
-
-        if (playerRigidbody.velocity.magnitude < minForceMagnitude)
-        {
-            playerRigidbody.velocity = Vector3.zero;
-            hasInput = false;
-            animator.SetBool("isMoving", false);
         }
     }
 
