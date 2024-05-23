@@ -75,5 +75,11 @@ public class RenderMap : MonoBehaviour
                 temp.transform.gameObject.tag = "Destination";
             }
         }
+
+        foreach (Vector3 location in MapData.LargeShopRightLocations)
+        {
+            temp = Instantiate(LargeShopRightPrefab, location, Quaternion.identity);
+            Debug.Log("spawned at: " + location);
+        }
     }
 }
