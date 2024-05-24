@@ -11,6 +11,7 @@ TagManager:
   - Destination
   - PackageSpawn
   - Package
+  - Walkable
   layers:
   - Default
   - TransparentFX
