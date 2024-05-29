@@ -87,6 +87,7 @@ public class DeliveryManager : MonoBehaviour
             spawnPosition.y = 1;
             currentPackage = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
             isSpawning = true;
+            progressBar.package = currentPackage;
         }
         else
         {
@@ -115,7 +116,6 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = null;
         SetDescriptionOnPhone();
-        progressBar.destination = null;
         isDelivering = false;
 
         GameManager.instance.score += 100;
@@ -126,7 +126,7 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = RandomizeDestination();
         SetDescriptionOnPhone();
-        progressBar.destination = destination;
+        progressBar.package = null;
         currentPackage = null;
 
         isDelivering = true;

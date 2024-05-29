@@ -8,9 +8,9 @@ public class ProgressBar : MonoBehaviour
 {
     public Slider barFiller;
     public GameObject player;
-    public GameObject destination;
+    public GameObject package;
 
-    public bool isDelivering;
+    public bool isSearching;
     public float initialDistance;
     public float currentDistance;
 
@@ -23,9 +23,9 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (destination != null)
+        if (package != null)
         {
-            if (!isDelivering)
+            if (!isSearching)
             {
                 SetBar();
             }
@@ -36,7 +36,7 @@ public class ProgressBar : MonoBehaviour
         }
         else
         {
-            isDelivering = false;
+            isSearching = false;
         }
 
     }
@@ -44,17 +44,17 @@ public class ProgressBar : MonoBehaviour
     private void SetBar()
     {
         Vector3 playerPosition = new Vector3(player.transform.position.x, 0 , player.transform.position.z);
-        Vector3 destinationPosition = new Vector3(destination.transform.position.x, 0, destination.transform.position.z);
+        Vector3 destinationPosition = new Vector3(package.transform.position.x, 0, package.transform.position.z);
 
         initialDistance = Vector3.Distance(destinationPosition, playerPosition);
 
-        isDelivering = true;
+        isSearching = true;
     }
 
     private void UpdateBar()
     {
         Vector3 playerPosition = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-        Vector3 destinationPosition = new Vector3(destination.transform.position.x, 0, destination.transform.position.z);
+        Vector3 destinationPosition = new Vector3(package.transform.position.x, 0, package.transform.position.z);
 
         currentDistance = Vector3.Distance(destinationPosition, playerPosition);
 
@@ -66,12 +66,12 @@ public class ProgressBar : MonoBehaviour
             }
             else
             {
-                barFiller.value = (initialDistance - currentDistance) * 1.1f / initialDistance;
+                barFiller.value = 1 - (initialDistance - currentDistance) * 1.1f / initialDistance;
             }
         }
         else
         {
-            barFiller.value = 0;
+            barFiller.value = 1;
         }
     }
 }
