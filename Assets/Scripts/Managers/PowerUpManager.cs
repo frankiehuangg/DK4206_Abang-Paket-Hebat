@@ -64,7 +64,7 @@ public class PowerUpManager : MonoBehaviour
     }
 
     public void ActivateSpeedUp() {
-        if (zoomOutCountdown <= 0 && speedUp > 0) {
+        if (speedUpCountdown <= 0 && speedUp > 0) {
             speedUp--;
             StartCoroutine(SpeedUpActive());
         }
