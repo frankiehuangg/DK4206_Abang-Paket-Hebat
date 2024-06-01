@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float defaultSpeed = 50f;
 
-    private float minForceMagnitude = 0.1f;
-
     private Rigidbody playerRigidbody;
     private Vector3 startPosition;
     private Vector3 endPosition;
