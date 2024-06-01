@@ -8,18 +8,18 @@ public class RenderMap : MonoBehaviour
     public GameObject[] HomeCubeLeftPrefab;
     public GameObject[] HomeCubeRightPrefab;
 
-    public GameObject[] HomeBlockFrontPrefab;
-    public GameObject[] HomeBlockBackPrefab;
-    public GameObject[] HomeBlockLeftPrefab;
-    public GameObject[] HomeBlockRightPrefab;
+    public GameObject HomeBlockFrontPrefab;
+    public GameObject HomeBlockBackPrefab;
+    public GameObject HomeBlockLeftPrefab;
+    public GameObject HomeBlockRightPrefab;
 
     public GameObject SmallShopFrontPrefab;
     public GameObject SmallShopBackPrefab;
     public GameObject SmallShopLeftPrefab;
     public GameObject SmallShopRightPrefab;
 
-    public GameObject LargeShopFrontPrefab;
-    public GameObject LargeShopBackPrefab;
+    public GameObject LargeShopFrontPrefab1;
+    public GameObject LargeShopFrontPrefab2;
     public GameObject LargeShopLeftPrefab;
     public GameObject LargeShopRightPrefab;
 
@@ -76,10 +76,48 @@ public class RenderMap : MonoBehaviour
             }
         }
 
-        foreach (Vector3 location in MapData.LargeShopRightLocations)
+        foreach (Vector3 location in MapData.HomeBlockFrontLocations)
         {
-            temp = Instantiate(LargeShopRightPrefab, location, Quaternion.identity);
-            Debug.Log("spawned at: " + location);
+            temp = Instantiate(HomeBlockRightPrefab, location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
         }
+
+        foreach (Vector3 location in MapData.HomeBlockBackLocations)
+        {
+            temp = Instantiate(HomeBlockLeftPrefab, location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
+        }
+
+        foreach (Vector3 location in MapData.HomeBlockRightLocations)
+        {
+            temp = Instantiate(HomeBlockBackPrefab, location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
+        }
+
+        // Small Shops
+        foreach (Vector3 location in MapData.SmallShopLeftLocations)
+        {
+            Instantiate(SmallShopFrontPrefab, location, Quaternion.identity);
+        }
+
+        foreach (Vector3 location in MapData.SmallShopFrontLocations)
+        {
+            Instantiate(SmallShopRightPrefab, location, Quaternion.identity);
+        }
+
+        // Large Shops
+        Instantiate(LargeShopFrontPrefab1, MapData.LargeShopFrontLocation1, Quaternion.identity);
+        Instantiate(LargeShopFrontPrefab2, MapData.LargeShopFrontLocation2, Quaternion.identity);
+        Instantiate(LargeShopLeftPrefab, MapData.LargeShopLeftLocations, Quaternion.identity);
+        Instantiate(LargeShopRightPrefab, MapData.LargeShopRightLocation, Quaternion.identity);
     }
 }
