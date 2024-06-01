@@ -60,17 +60,11 @@ public class ProgressBar : MonoBehaviour
 
         if (currentDistance < initialDistance)
         {
-            if (currentDistance < 5)
-            {
-                barFiller.value = 1;
-            }
-            else
-            {
-                barFiller.value = 1 - (initialDistance - currentDistance) * 1.1f / initialDistance;
-            }
+            barFiller.value = 1 - (initialDistance - currentDistance) * 1.1f / initialDistance;
         }
         else
         {
+            initialDistance = currentDistance;
             barFiller.value = 1;
         }
     }
