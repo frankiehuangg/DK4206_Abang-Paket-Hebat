@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public Timer timer;
     public DeliveryManager deliveryManager;
     public GameObject canvasOnPlay;
-    public GameObject canvasGameOver; 
+    public GameObject canvasGameOver;
 
     private void Awake()
     {
