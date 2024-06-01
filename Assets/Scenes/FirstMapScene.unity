@@ -2676,17 +2676,17 @@ MonoBehaviour:
   HomeCubeRightPrefab:
   - {fileID: 6917759320996921437, guid: a57b688977413993dab16d836b412d1f, type: 3}
   - {fileID: 3132572623369696058, guid: 60d3a5d338e8744a18fa9e7f10178952, type: 3}
-  HomeBlockFrontPrefab: []
-  HomeBlockBackPrefab: []
-  HomeBlockLeftPrefab: []
-  HomeBlockRightPrefab: []
-  SmallShopFrontPrefab: {fileID: 0}
+  HomeBlockFrontPrefab: {fileID: 0}
+  HomeBlockBackPrefab: {fileID: 4786030802920645107, guid: ff82ba3a327370032bd731427467bfc5, type: 3}
+  HomeBlockLeftPrefab: {fileID: 5625790238059649660, guid: a4a7078e91e2720b196f83cbdf88f879, type: 3}
+  HomeBlockRightPrefab: {fileID: 153076394885466158, guid: f6f60c7c6c05bed47a9fbd4787b7f118, type: 3}
+  SmallShopFrontPrefab: {fileID: 153076394885466158, guid: 05f8bf77633236910a25eff302dc3aea, type: 3}
   SmallShopBackPrefab: {fileID: 0}
   SmallShopLeftPrefab: {fileID: 0}
-  SmallShopRightPrefab: {fileID: 0}
-  LargeShopFrontPrefab: {fileID: 0}
-  LargeShopBackPrefab: {fileID: 0}
-  LargeShopLeftPrefab: {fileID: 0}
+  SmallShopRightPrefab: {fileID: 153076394885466158, guid: d7aed1861508dbbf683644fefc912e36, type: 3}
+  LargeShopFrontPrefab1: {fileID: 6973624011889072581, guid: f9be70bf2f2f189bc9a0210e8da38221, type: 3}
+  LargeShopFrontPrefab2: {fileID: 6973624011889072581, guid: c7f0e88ec7d5ac3839ce376f43586a68, type: 3}
+  LargeShopLeftPrefab: {fileID: 3316399167040643634, guid: 2cb6340043b902316b0fefa3eed103f5, type: 3}
   LargeShopRightPrefab: {fileID: 3316399167040643634, guid: f2f7278acb419fd5e97b158079d3a234, type: 3}
 --- !u!4 &111784034
 Transform:
