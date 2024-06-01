@@ -154,22 +154,14 @@ public static class MapData
         new(8.5f, 1.5f, -9f),
     };
 
-    public static Vector3[] LargeShopFrontLocations = {
-        new(-12f, 4f, -19f),
-    };
+    public static Vector3 LargeShopFrontLocation1 = new(-12f, 4f, -19f);
 
 
-    public static Vector3[] LargeShopBackLocations = {
-        new(28f, 4f, -10f),
-    };
+    public static Vector3 LargeShopFrontLocation2 = new(28f, 4f, -10f);
 
-    public static Vector3[] LargeShopLeftLocations = {
-        new(-25f, 4f, 10f),
-    };
+    public static Vector3 LargeShopLeftLocations = new(-25f, 4f, 10f);
 
-    public static Vector3[] LargeShopRightLocations = {
-        new(-8f, 4f, 24f),
-    };
+    public static Vector3 LargeShopRightLocation = new(-8f, 4f, 24f);
 
     public static Vector3[] destinationLocations = {
         new(-8f, 1.5f, 16f),
