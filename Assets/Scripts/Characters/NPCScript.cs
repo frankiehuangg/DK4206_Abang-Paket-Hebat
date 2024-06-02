@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,16 +7,22 @@ using UnityEngine;
 public class NPCScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    // Start is called before the first frame update
-    void Start()
+    public Sprite[] npcSprites;
+    private SpriteRenderer spriteRenderer;
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        RandomizeSprite();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RandomizeSprite()
     {
-        
+        if (spriteRenderer != null)
+        {
+            int spriteIndex = UnityEngine.Random.Range(0, npcSprites.Length);
+            spriteRenderer.sprite = npcSprites[spriteIndex];
+        }
     }
 
     public void setHappy() {
