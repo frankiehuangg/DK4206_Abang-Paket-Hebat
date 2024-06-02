@@ -31,9 +31,11 @@ public class PowerUpManager : MonoBehaviour
         {
             instance = this;
         }
-        zoomOut = Math.Min(3, GameState.instance.zoomOut);
-        speedUp = Math.Min(3, GameState.instance.speedUp);
-
+        if (GameState.instance != null)
+        {
+            zoomOut = Math.Min(3, GameState.instance.zoomOut);
+            speedUp = Math.Min(3, GameState.instance.speedUp);
+        }
     }
 
     // Update is called once per frame

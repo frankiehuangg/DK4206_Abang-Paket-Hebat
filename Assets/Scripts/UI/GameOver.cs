@@ -17,7 +17,11 @@ public class GameOver : MonoBehaviour
         deliverText.text = GameManager.instance.delivered.ToString();
         scoreText.text = GameManager.instance.score.ToString();
         coinsText.text = GameManager.instance.coins.ToString();
-        highscoreText.text = GameState.instance.highestScore.ToString();
+
+        if (GameState.instance != null)
+        {
+            highscoreText.text = GameState.instance.highestScore.ToString();
+        }
 
     }
     public void Retry(string mainScene)

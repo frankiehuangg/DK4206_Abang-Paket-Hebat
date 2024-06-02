@@ -13,6 +13,7 @@ TagManager:
   - Package
   - Walkable
   - CoinSpawn
+  - Coin
   layers:
   - Default
   - TransparentFX

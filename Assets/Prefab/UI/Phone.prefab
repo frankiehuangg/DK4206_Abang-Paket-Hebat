@@ -276,6 +276,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneScreen: {fileID: 2712316483747914100}
   buildingDescription: {fileID: 0}
+  phoneBackground:
+  - {fileID: 21300000, guid: 82b9b861c4740554c87beebc1962d1f4, type: 3}
+  - {fileID: 21300000, guid: dac49bfcd221b614eae44e1dcbc1ba73, type: 3}
+  - {fileID: 21300000, guid: bbc5c66a820c25c47ad8af40eb431738, type: 3}
   houseRoofSprites:
   - {fileID: 21300000, guid: c1bad4a8108ea2c46a6fcb1c8f3dfc3d, type: 3}
   - {fileID: 21300000, guid: 6979270edbea42949983f1c529347e32, type: 3}
@@ -298,6 +302,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d135f24624fa125419d76361e2e31603, type: 3}
   - {fileID: 21300000, guid: 8052704a129443a44bf488e1888f5050, type: 3}
   - {fileID: 21300000, guid: 407fc46c38d878442822626409c4fe65, type: 3}
+  phoneBackgroundImage: {fileID: 2161738978308075753}
   houseRoofImage: {fileID: 3213501783240912288}
   houseBodyImage: {fileID: 2375176516158381923}
   houseDirectionImage: {fileID: 2417871777482242535}

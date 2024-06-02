@@ -9,11 +9,14 @@ public class PhoneScreen : MonoBehaviour
     public GameObject phoneScreen;
     public Building buildingDescription;
 
+    public Sprite[] phoneBackground;
+
     public Sprite[] houseRoofSprites;
     public Sprite[] houseBodySprites;
     public Sprite[] houseDirectionSprites;
     public Sprite[] houseDecorationSprites;
 
+    public Image phoneBackgroundImage;
     public Image houseRoofImage;
     public Image houseBodyImage;
     public Image houseDirectionImage;
@@ -38,6 +41,7 @@ public class PhoneScreen : MonoBehaviour
         if (buildingDescription != null)
         {
             SetVisible();
+            phoneBackgroundImage.sprite = phoneBackground[0];
             SetRoof();
             SetBody();
             SetDirection();
@@ -47,6 +51,11 @@ public class PhoneScreen : MonoBehaviour
         {
             SetInvisible();
         }
+    }
+
+    public void SetNotification()
+    {
+        phoneBackgroundImage.sprite = phoneBackground[Random.Range(1, 3)];
     }
 
     private void SetRoof()

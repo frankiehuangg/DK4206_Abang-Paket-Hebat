@@ -112,11 +112,17 @@ public class DeliveryManager : MonoBehaviour
         phone.GetComponent<PhoneScreen>().SetScreen();
     }
 
+    private void SetNotificationOnPhone()
+    {
+        phone.GetComponent<PhoneScreen>().SetNotification();
+    }
+
     public void OnArrive()
     {
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
         destination = null;
         SetDescriptionOnPhone();
+        SetNotificationOnPhone();
         isDelivering = false;
 
         GameManager.instance.score += 100;

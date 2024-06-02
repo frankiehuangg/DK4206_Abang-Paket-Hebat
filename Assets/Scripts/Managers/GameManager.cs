@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (score > GameState.instance.highestScore)
+        if (GameState.instance != null && score > GameState.instance.highestScore)
         {
             GameState.instance.highestScore = score;
         }
