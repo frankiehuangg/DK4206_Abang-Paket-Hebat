@@ -43,63 +43,98 @@ public class RenderMap : MonoBehaviour
         foreach (Vector3 location in MapData.HomeCubeFrontLocations)
         {
             temp = Instantiate(HomeCubeRightPrefab[random.Next(0, HomeCubeRightPrefab.Length)], location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeCubeBackLocations)
         {
             temp = Instantiate(HomeCubeLeftPrefab[random.Next(0, HomeCubeLeftPrefab.Length)], location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeCubeLeftLocations)
         {
             temp = Instantiate(HomeCubeFrontPrefab[random.Next(0, HomeCubeFrontPrefab.Length)], location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeCubeRightLocations)
         {
             temp = Instantiate(HomeCubeBackPrefab[random.Next(0, HomeCubeBackPrefab.Length)], location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeBlockFrontLocations)
         {
             temp = Instantiate(HomeBlockRightPrefab, location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeBlockBackLocations)
         {
             temp = Instantiate(HomeBlockLeftPrefab, location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
         foreach (Vector3 location in MapData.HomeBlockRightLocations)
         {
             temp = Instantiate(HomeBlockBackPrefab, location, Quaternion.identity);
+            if (random.Next(0, 3) != 0)
+            {
+                temp.transform.Find("NPC").gameObject.SetActive(false);
+            }
             if (MapData.destinationLocations.Contains(location))
             {
                 temp.transform.gameObject.tag = "Destination";
+                temp.transform.Find("NPC").gameObject.SetActive(true);
             }
         }
 
