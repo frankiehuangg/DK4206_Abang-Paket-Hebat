@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidbody;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    private float currentSpeed;
+    public float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
-    public float stopingConstraint = 1.2f;
+    public float stopingConstraint = 2.0f;
     private Vector3 targetPosition;
     [SerializeField] private BranchScript branch;
     [SerializeField] private Animator animator;
@@ -93,12 +93,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            playerRigidbody.velocity = Vector3.zero;
             if (isStoping)
             {
-                transform.position = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
-                isStoping = false;
-                animator.SetBool("isMoving", false);
+                targetPosition = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
+                if(transform.position == targetPosition)
+                {
+                    isStoping = false;
+                    animator.SetBool("isMoving", false);
+                }
             }
         }
     }

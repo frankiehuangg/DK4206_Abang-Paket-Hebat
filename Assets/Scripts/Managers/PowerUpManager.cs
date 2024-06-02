@@ -44,9 +44,9 @@ public class PowerUpManager : MonoBehaviour
         }
 
         if (speedUpCountdown > 0) {
-            playerMovement.defaultSpeed = baseSpeed * 2.5f;
+            playerMovement.currentSpeed = baseSpeed * 2.5f;
         } else {
-            playerMovement.defaultSpeed = baseSpeed;
+            playerMovement.currentSpeed = baseSpeed;
         }
     }
 
