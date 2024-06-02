@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
-    public float stopingConstraint = 1.2f;
+    public float stopingConstraint = 2.0f;
     private Vector3 targetPosition;
     [SerializeField] private BranchScript branch;
     [SerializeField] private Animator animator;
