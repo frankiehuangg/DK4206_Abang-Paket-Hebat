@@ -7,12 +7,13 @@ public class PowerUpManager : MonoBehaviour
 {
     public static PowerUpManager instance;
 
-    public CameraFollow camera;
+    public CameraFollow cameraWorld;
     public PlayerMovement playerMovement;
     public int zoomOut {get; private set; } = 3;
     public int zoomOutCountdown {get; private set; } = 0;
     public int speedUp {get; private set; } = 3;
     public int speedUpCountdown {get; private set; } = 0;
+    private float baseSpeed;
     
     [SerializeField]
     int zoomOutDuration;
@@ -21,6 +22,7 @@ public class PowerUpManager : MonoBehaviour
 
     private void Awake()
     {
+        baseSpeed = playerMovement.defaultSpeed;
         if (instance != null && instance != this)
         {
             Destroy(this);
@@ -36,15 +38,15 @@ public class PowerUpManager : MonoBehaviour
     void Update()
     {
         if (zoomOutCountdown > 0) {
-            camera.GetComponent<Camera>().orthographicSize = 6.0f;
+            cameraWorld.GetComponent<Camera>().orthographicSize = 6.0f;
         } else {
-            camera.GetComponent<Camera>().orthographicSize = 4.0f;
+            cameraWorld.GetComponent<Camera>().orthographicSize = 4.0f;
         }
 
         if (speedUpCountdown > 0) {
-            playerMovement.defaultSpeed = 100;
+            playerMovement.defaultSpeed = baseSpeed * 2.5f;
         } else {
-            playerMovement.defaultSpeed = 50;
+            playerMovement.defaultSpeed = baseSpeed;
         }
     }
 
