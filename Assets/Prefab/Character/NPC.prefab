@@ -247,6 +247,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4894182962072575671}
+  sprite: {fileID: 391130287150676048}
+  sprites:
+  - {fileID: 21300000, guid: bfe35bc089f70db44aaee4ffa109c386, type: 3}
+  - {fileID: 21300000, guid: 736d52fcc64383046b8d9dec0f7c38ea, type: 3}
+  - {fileID: 21300000, guid: 8104d788e2ca1124fb81fe7a0a58c72a, type: 3}
+  - {fileID: 21300000, guid: ce91c9cf56bf3e349b6c65e591018ab6, type: 3}
+  - {fileID: 21300000, guid: 6799e5b3784878f4ca9242202a58476b, type: 3}
+  - {fileID: 21300000, guid: 1d4db1c52f4ce9646b5dbd5adf865121, type: 3}
+  - {fileID: 21300000, guid: cb58b7730d78363419efba07be6ad000, type: 3}
+  - {fileID: 21300000, guid: 8cdc1dad0bc9db14ab4f8f37f7a4cda7, type: 3}
+  - {fileID: 21300000, guid: 63d19cfd7fbb5684e825308c98ef246e, type: 3}
+  - {fileID: 21300000, guid: 46355c675fce3d4449bc0af367d6cf90, type: 3}
+  - {fileID: 21300000, guid: 609ecccd03629cf48a6ff065fc54c56d, type: 3}
+  - {fileID: 21300000, guid: a1a783f7e37bbfb488e786e2e659ed1f, type: 3}
+  waitingDuration: 10
+  waitingCountdown: 0
 --- !u!1 &8205903025730442194
 GameObject:
   m_ObjectHideFlags: 0
