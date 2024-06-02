@@ -131,5 +131,7 @@ public class DeliveryManager : MonoBehaviour
 
         isDelivering = true;
         isSpawning = false;
+
+        GameManager.instance.picked += 1;
     }
 }

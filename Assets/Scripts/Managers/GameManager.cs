@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public bool isPlaying = false;
     public int score = 0;
+    public int coins = 0;
     public int delivered = 0;
+    public int picked = 0;
 
     public Timer timer;
     public DeliveryManager deliveryManager;
@@ -57,14 +59,15 @@ public class GameManager : MonoBehaviour
         timer.ResetTimer();
         isPlaying = false;
         canvasGameOver.SetActive(true);
-        SetTextOnOver();
         player.enabled = false;
     }
 
     private void Reset()
     {
         score = 0;
+        coins = 0;
         delivered = 0;
+        picked = 0;
     }
 
     private void SetTextOnPlay()
