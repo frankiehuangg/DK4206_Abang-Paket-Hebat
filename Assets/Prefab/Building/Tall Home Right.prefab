@@ -87,6 +87,7 @@ Transform:
   - {fileID: 1409142219297680468}
   - {fileID: 7314677459709405163}
   - {fileID: 1552286805836959084}
+  - {fileID: 2031055431558423191}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351231208106837689
@@ -310,9 +311,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc0890b1954973422ade04be5134ae04, type: 3}
   - {fileID: 21300000, guid: 83e81709f8022905987126af646dff55, type: 3}
   - {fileID: 21300000, guid: f8293e9446554b884a3c68264946069c, type: 3}
-  spriteDescriptions:
-  - Tembok kuning, atap oranye, 1 jendela, 2 tingkat
-  currentSpriteDescription: 
 --- !u!114 &3468345340380232232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,3 +328,65 @@ MonoBehaviour:
   view: 
   decorations: []
   spriteIndex: 0
+--- !u!1001 &131792793795018025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3211871322534561563}
+    m_Modifications:
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690810988800048896, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+--- !u!4 &2031055431558423191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2160596416948428734, guid: 4aec4fdca2b621b498529d3c6e2dce40, type: 3}
+  m_PrefabInstance: {fileID: 131792793795018025}
+  m_PrefabAsset: {fileID: 0}
