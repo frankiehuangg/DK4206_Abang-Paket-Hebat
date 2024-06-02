@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidbody;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    private float currentSpeed;
+    public float currentSpeed;
     private bool hasInput = false;
     public bool isStoping = true;
     public float stopingConstraint = 2.0f;
