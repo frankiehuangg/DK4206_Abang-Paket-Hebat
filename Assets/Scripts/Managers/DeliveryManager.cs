@@ -114,6 +114,7 @@ public class DeliveryManager : MonoBehaviour
 
     public void OnArrive()
     {
+        destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
         destination = null;
         SetDescriptionOnPhone();
         isDelivering = false;
@@ -125,6 +126,7 @@ public class DeliveryManager : MonoBehaviour
     public void OnFoundPackage()
     {
         destination = RandomizeDestination();
+        destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = true;
         SetDescriptionOnPhone();
         progressBar.package = null;
         currentPackage = null;

@@ -48,5 +48,11 @@ public class PlayerAction : MonoBehaviour
             
             destination = DeliveryManager.instance.destination;
         }
+        
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            GameManager.instance.coins += 1;
+            Destroy(collision.gameObject);
+        }
     }
 }
