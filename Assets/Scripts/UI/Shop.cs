@@ -11,15 +11,24 @@ public class Shop : MonoBehaviour
     void Awake() {
         coinsAmount = coins.GetComponentInChildren<TextMeshProUGUI>();
     }
-    void Start()
-    {
-        Debug.Log(GameState.instance.coins);
-        coinsAmount.text = GameState.instance.coins.ToString();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        coinsAmount.text = GameState.instance.coins.ToString();
+    }
+
+    public void BuyZoomOut()
+    {
+        GameState.instance.coins -= 1;
+        GameState.instance.zoomOut += 1;
+        GameState.instance.SaveData();
+    }
+
+    public void BuySpeedUp()
+    {
+        GameState.instance.coins -= 1;
+        GameState.instance.speedUp += 1;
+        GameState.instance.SaveData();
     }
 }

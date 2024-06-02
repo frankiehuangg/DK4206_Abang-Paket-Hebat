@@ -7,9 +7,11 @@ public class GameState : MonoBehaviour
 {
     public static GameState instance;
 
-    public int zoomOut {get; private set; } = 99;
-    public int speedUp {get; private set; } = 99;
-    public int coins {get; private set; } = 99;
+    public int zoomOut {get; set; } = 99;
+    public int speedUp {get; set; } = 99;
+    public int coins {get; set; } = 99;
+
+    public int highestScore { get; set; } = 0;
 
     private void Awake()
     {
@@ -22,12 +24,22 @@ public class GameState : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
+        
+        LoadData();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SaveData()
     {
+        SaveLoadSystem.SaveGameData();
+    }
 
+    public void LoadData()
+    {
+        GameData data = SaveLoadSystem.LoadGameData();
+
+        zoomOut = data.zoomOutOwned;
+        speedUp = data.speedUpOwned;
+        coins = data.coinsOwned;
+        highestScore = data.highestScore;
     }
 }
