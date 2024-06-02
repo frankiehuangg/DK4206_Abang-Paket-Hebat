@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2118824052973497200}
   - component: {fileID: 3852426389031020228}
   - component: {fileID: 3583913176171899784}
+  - component: {fileID: -117098012777621794}
   m_Layer: 0
   m_Name: Cube_Right_2.2
   m_TagString: Building
@@ -147,3 +148,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-117098012777621794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124013689887456996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891f2e04b174eee4b98fedbf82314b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10

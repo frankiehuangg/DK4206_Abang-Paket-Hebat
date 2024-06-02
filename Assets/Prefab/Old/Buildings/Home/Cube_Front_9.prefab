@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6355087679711069661}
   - component: {fileID: 6225199418382611382}
   - component: {fileID: 7189891908590359197}
+  - component: {fileID: -6157531623750455123}
   m_Layer: 0
   m_Name: Cube_Front_9
   m_TagString: Building
@@ -147,3 +148,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6157531623750455123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569896268101858992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891f2e04b174eee4b98fedbf82314b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 10

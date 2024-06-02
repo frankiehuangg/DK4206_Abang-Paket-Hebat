@@ -8,7 +8,7 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour
 {
     [SerializeField]
-    int fadeSpeed;
+    int fadeSpeed = 10;
     private bool isFading = false;
     private SpriteRenderer sprite;
     private Collider blocking;
