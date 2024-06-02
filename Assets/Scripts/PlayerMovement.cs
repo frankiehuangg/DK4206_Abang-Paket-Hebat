@@ -93,12 +93,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            playerRigidbody.velocity = Vector3.zero;
             if (isStoping)
             {
-                transform.position = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
-                isStoping = false;
-                animator.SetBool("isMoving", false);
+                targetPosition = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
+                if(transform.position == targetPosition)
+                {
+                    isStoping = false;
+                    animator.SetBool("isMoving", false);
+                }
             }
         }
     }
