@@ -31,6 +31,8 @@ public class PowerUpManager : MonoBehaviour
         {
             instance = this;
         }
+        zoomOut = Math.Min(3, GameState.instance.zoomOut);
+        speedUp = Math.Min(3, GameState.instance.speedUp);
 
     }
 
@@ -53,6 +55,8 @@ public class PowerUpManager : MonoBehaviour
     public void ActivateZoomOut() {
         if (zoomOutCountdown <= 0 && zoomOut > 0) {
             zoomOut--;
+            GameState.instance.zoomOut -= 1;
+            GameState.instance.SaveData();
             StartCoroutine(ZoomOutActive());
         }
     }
@@ -68,6 +72,8 @@ public class PowerUpManager : MonoBehaviour
     public void ActivateSpeedUp() {
         if (speedUpCountdown <= 0 && speedUp > 0) {
             speedUp--;
+            GameState.instance.speedUp -= 1;
+            GameState.instance.SaveData();
             StartCoroutine(SpeedUpActive());
         }
     }

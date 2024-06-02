@@ -55,11 +55,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (score > GameState.instance.highestScore)
+        {
+            GameState.instance.highestScore = score;
+        }
         deliveryManager.GameOver();
         timer.ResetTimer();
         isPlaying = false;
         canvasGameOver.SetActive(true);
         player.enabled = false;
+        GameState.instance.coins += coins;
+        GameState.instance.SaveData();
     }
 
     private void Reset()
