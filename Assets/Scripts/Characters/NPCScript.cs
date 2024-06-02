@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,36 +7,25 @@ using UnityEngine;
 public class NPCScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer sprite;
-    public Sprite[] sprites;
-    public int waitingDuration = 10;
-    public int waitingCountdown = 0;
-    // Start is called before the first frame update
-    void Start()
+    public Sprite[] npcSprites;
+    private SpriteRenderer spriteRenderer;
+    private void Awake()
     {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        RandomizeSprite();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void RandomizeSprite()
     {
-        if(waitingCountdown <= 0) StartCoroutine(StartWaiting());
-
-        if(waitingCountdown < (float)waitingDuration / 3) {
-            SetMad();
-        } else if(waitingCountdown < (float)waitingDuration * 2 / 3) {
-            SetPoker();
-            Debug.Log("a");
-        } else {
-            SetHappy();
+        if (spriteRenderer != null)
+        {
+            int spriteIndex = UnityEngine.Random.Range(0, npcSprites.Length);
+            spriteRenderer.sprite = npcSprites[spriteIndex];
         }
     }
 
-    public void SetSprite(int id) {
-        sprite.sprite = sprites[id];
-    }
-
-    public void SetHappy() {
+    public void setHappy() {
         animator.SetInteger("mood", 0);
     }
 
