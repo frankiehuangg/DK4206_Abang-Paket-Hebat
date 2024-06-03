@@ -40738,6 +40738,10 @@ PrefabInstance:
       value: stopper (15)
       objectReference: {fileID: 0}
     - target: {fileID: 5810117039229323735, guid: ca642d01002547e4baa9b2ef519a476e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810117039229323735, guid: ca642d01002547e4baa9b2ef519a476e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.64
       objectReference: {fileID: 0}
