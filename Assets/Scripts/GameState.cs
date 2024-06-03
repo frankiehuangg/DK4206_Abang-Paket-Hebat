@@ -7,11 +7,13 @@ public class GameState : MonoBehaviour
 {
     public static GameState instance;
 
-    public int zoomOut {get; set; } = 99;
-    public int speedUp {get; set; } = 99;
-    public int coins {get; set; } = 99;
-
+    public int zoomOut {get; set; } = 0;
+    public int speedUp {get; set; } = 0;
+    public int coins {get; set; } = 50;
     public int highestScore { get; set; } = 0;
+    public string language { get; set; } = "English";
+    public float musicLevel { get; set; } = 100;
+    public float sfxLevel { get; set; } = 100;
 
     private void Awake()
     {
@@ -41,5 +43,8 @@ public class GameState : MonoBehaviour
         speedUp = data.speedUpOwned;
         coins = data.coinsOwned;
         highestScore = data.highestScore;
+        language = data.language;
+        musicLevel = data.musicLevel;
+        sfxLevel = data.sfxLevel;
     }
 }
