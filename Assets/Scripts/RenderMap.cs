@@ -124,6 +124,15 @@ public class RenderMap : MonoBehaviour
             }
         }
 
+        foreach (Vector3 location in MapData.HomeBlockLeftLocations)
+        {
+            temp = Instantiate(HomeBlockFrontPrefab, location, Quaternion.identity);
+            if (MapData.destinationLocations.Contains(location))
+            {
+                temp.transform.gameObject.tag = "Destination";
+            }
+        }
+
         foreach (Vector3 location in MapData.HomeBlockRightLocations)
         {
             temp = Instantiate(HomeBlockBackPrefab, location, Quaternion.identity);
