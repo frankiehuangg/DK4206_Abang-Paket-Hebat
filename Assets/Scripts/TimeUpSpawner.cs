@@ -6,7 +6,7 @@ public class TimeUpSpawner : MonoBehaviour
 {
     public GameObject[] timeUpSpawner;
     public GameObject timeUp;
-    Vector3 prevPosition;
+    int prevIdx;
     bool isAlive = false;
     // Start is called before the first frame update
     private void Awake()
@@ -24,8 +24,12 @@ public class TimeUpSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         isAlive = true;
-        Vector3 spawnPosition = timeUpSpawner[Random.Range(0, timeUpSpawner.Length)].transform.position;
-        prevPosition = spawnPosition;
+        int idx = Random.Range(0, timeUpSpawner.Length);
+        if (prevIdx == idx) {
+            idx =  (idx + 1) % timeUpSpawner.Length;
+        }
+        prevIdx = idx;
+        Vector3 spawnPosition = timeUpSpawner[idx].transform.position;
         spawnPosition.y = 1;
         GameObject timeUpObj = Instantiate(timeUp, spawnPosition, Quaternion.identity);
         yield return new WaitForSeconds (5);
