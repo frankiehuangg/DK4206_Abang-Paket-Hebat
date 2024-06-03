@@ -109,24 +109,32 @@ public class DeliveryManager : MonoBehaviour
         }
 
         phone.GetComponent<PhoneScreen>().buildingDescription = buildingDescription;
-        phone.GetComponent<PhoneScreen>().SetScreen();
+        phone.GetComponent<PhoneScreen>().SetDefaultBackground();
     }
 
     private void SetNotificationOnPhone()
     {
+        phone.GetComponent<PhoneScreen>().buildingDescription = null;
         phone.GetComponent<PhoneScreen>().SetNotification();
+    }
+
+    IEnumerator SetPhoneOnArrive()
+    {
+        SetNotificationOnPhone();
+        yield return new WaitForSeconds(5);
+        SetDescriptionOnPhone();
     }
 
     public void OnArrive()
     {
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
         destination = null;
-        SetDescriptionOnPhone();
-        SetNotificationOnPhone();
+        StartCoroutine(SetPhoneOnArrive());
         isDelivering = false;
 
         GameManager.instance.score += 100;
         GameManager.instance.delivered += 1;
+        GameManager.instance.coins += 10;
     }
 
     public void OnFoundPackage()

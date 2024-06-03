@@ -1036,6 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf473e56c685fd47a3cf3f60a7ad267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playText: {fileID: 1070261332}
   coinsText: {fileID: 437168525}
   skillZoomOutText: {fileID: 342672677}
   skillSpeedUpText: {fileID: 1310283085}

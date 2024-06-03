@@ -41,7 +41,6 @@ public class PhoneScreen : MonoBehaviour
         if (buildingDescription != null)
         {
             SetVisible();
-            phoneBackgroundImage.sprite = phoneBackground[0];
             SetRoof();
             SetBody();
             SetDirection();
@@ -51,6 +50,11 @@ public class PhoneScreen : MonoBehaviour
         {
             SetInvisible();
         }
+    }
+
+    public void SetDefaultBackground()
+    {
+        phoneBackgroundImage.sprite = phoneBackground[0];
     }
 
     public void SetNotification()
