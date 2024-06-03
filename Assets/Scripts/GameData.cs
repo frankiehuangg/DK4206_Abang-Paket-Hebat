@@ -9,6 +9,9 @@ public class GameData
     public int zoomOutOwned;
     public int speedUpOwned;
     public int highestScore;
+    public string language;
+    public float musicLevel;
+    public float sfxLevel;
 
     public GameData()
     {
@@ -17,6 +20,8 @@ public class GameData
         zoomOutOwned = gameState.zoomOut;
         speedUpOwned = gameState.speedUp;
         highestScore = gameState.highestScore;
-
+        language = gameState.language;
+        musicLevel = gameState.musicLevel;
+        sfxLevel = gameState.sfxLevel;
     }
 }
