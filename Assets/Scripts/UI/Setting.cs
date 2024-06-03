@@ -46,11 +46,30 @@ public class Setting : MonoBehaviour
         SceneManager.LoadScene(menuScene);
     }
 
+    public void ChangeMusicLevel()
+    {
+        if (GameState.instance != null)
+        {
+            GameState.instance.musicLevel = musicSlider.value;
+            GameState.instance.SaveData();
+        }
+    }
+
+    public void ChangeSfxLevel()
+    {
+        if (GameState.instance != null)
+        {
+            GameState.instance.sfxLevel = sfxSlider.value;
+            GameState.instance.SaveData();
+        }
+    }
+
     public void ChangeToEnglish()
     {
         if (GameState.instance != null)
         {
             GameState.instance.language = "English";
+            GameState.instance.SaveData();
         }
         SetEnglish();
     }
@@ -60,6 +79,7 @@ public class Setting : MonoBehaviour
         if (GameState.instance != null)
         {
             GameState.instance.language = "Indonesia";
+            GameState.instance.SaveData();
         }
         SetIndonesia();
     }
