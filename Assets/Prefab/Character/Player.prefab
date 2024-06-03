@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 20
+  currentSpeed: 0
   isStoping: 1
-  stopingConstraint: 1.2
+  stopingConstraint: 1.44
   branch: {fileID: 0}
   animator: {fileID: 9139944773334579841}
 --- !u!114 &7606503263157715954
