@@ -32,7 +32,7 @@ public class TimeUpSpawner : MonoBehaviour
         Vector3 spawnPosition = timeUpSpawner[idx].transform.position;
         spawnPosition.y = 1;
         GameObject timeUpObj = Instantiate(timeUp, spawnPosition, Quaternion.identity);
-        yield return new WaitForSeconds (5);
+        yield return new WaitForSeconds (25);
         Destroy(timeUpObj);
         isAlive = false;
     }
