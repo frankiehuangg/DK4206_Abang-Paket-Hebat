@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
     public GameObject coins;
     private TextMeshProUGUI coinsAmount;
     // Start is called before the first frame update
-    void Awake() {
+    void Awake()
+    {
         coinsAmount = coins.GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -30,5 +32,10 @@ public class Shop : MonoBehaviour
         GameState.instance.coins -= 5;
         GameState.instance.speedUp += 1;
         GameState.instance.SaveData();
+    }
+
+    public void BackToMenu(string menuScene)
+    {
+        SceneManager.LoadScene(menuScene);
     }
 }
