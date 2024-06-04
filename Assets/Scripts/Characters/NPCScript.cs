@@ -92,5 +92,6 @@ public class NPCScript : MonoBehaviour
         reaction.sprite = reactions[state + 3];
         yield return new WaitForSeconds(2);
         transform.Find("Thoughts").gameObject.SetActive(false);
+        receiving = false;
     }
 }
