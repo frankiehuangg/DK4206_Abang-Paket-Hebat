@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
         coinsText.text = GameState.instance.coins.ToString();
         skillZoomOutText.text = GameState.instance.zoomOut.ToString();
         skillSpeedUpText.text = GameState.instance.speedUp.ToString();
+        GetComponent<AudioSource>().volume = GameState.instance.musicLevel;
     }
     public void StartGame(string mainScene)
     {

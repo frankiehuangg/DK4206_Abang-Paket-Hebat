@@ -15,10 +15,7 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        if (playerMovement.isStoping)
-        {
-            CheckOnStop();
-        }
+        CheckOnStop();
     }
     private void CheckOnStop()
     {
@@ -27,7 +24,7 @@ public class PlayerAction : MonoBehaviour
         {
             foreach (Collider collider in colliders)
             {
-                if (collider.transform.parent != null && collider.transform.parent.gameObject == destination)
+                if (collider.transform.parent != null && collider.transform.gameObject.name == "Pickup" && collider.transform.parent.gameObject == destination)
                 {
                     animator.SetBool("isDelivering", false);
                     destination = null;
