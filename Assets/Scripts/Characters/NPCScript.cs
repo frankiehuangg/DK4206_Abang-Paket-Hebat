@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class NPCScript : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    public Sprite[] npcSprites;
+    [SerializeField] private SpriteRenderer reaction;
+    [SerializeField] private Sprite[] reactions;
+    [SerializeField] private Sprite[] npcSprites;
     private SpriteRenderer spriteRenderer;
     public int waitingDuration = 10;
     public int waitingCountdown = 0;
@@ -25,8 +26,6 @@ public class NPCScript : MonoBehaviour
 
     void Update()
     {
-        if(waitingCountdown <= 0) StartCoroutine(StartWaiting());
-
         if(waitingCountdown < (float)waitingDuration / 3) {
             SetMad();
         } else if(waitingCountdown < (float)waitingDuration * 2 / 3) {
@@ -35,6 +34,19 @@ public class NPCScript : MonoBehaviour
             SetHappy();
         }
     }
+
+    public void Wait() {
+        if(waitingCountdown <= 0) {
+            transform.Find("Thoughts").gameObject.SetActive(true);
+            StartCoroutine(StartWaiting());
+        }
+    }
+
+    public void Receive() {
+        transform.Find("Thoughts").gameObject.SetActive(false);
+        StopCoroutine(StartWaiting());
+    }
+
     private void RandomizeSprite()
     {
         if (spriteRenderer != null)
@@ -48,15 +60,15 @@ public class NPCScript : MonoBehaviour
     // Update is called once per frame
 
     public void SetHappy() {
-        animator.SetInteger("mood", 0);
+        reaction.sprite = reactions[0];
     }
 
     public void SetPoker() {
-        animator.SetInteger("mood", 1);
+        reaction.sprite = reactions[1];
     }
 
     public void SetMad() {
-        animator.SetInteger("mood", 2);
+        reaction.sprite = reactions[2];
     }
 
 

@@ -128,6 +128,8 @@ public class DeliveryManager : MonoBehaviour
     public void OnArrive()
     {
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
+        NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
+        npc.Receive();
         destination = null;
         StartCoroutine(SetPhoneOnArrive());
         isDelivering = false;
@@ -141,6 +143,8 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = RandomizeDestination();
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = true;
+        NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
+        npc.Wait();
         SetDescriptionOnPhone();
         progressBar.package = null;
         currentPackage = null;
