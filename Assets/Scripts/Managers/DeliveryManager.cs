@@ -128,6 +128,7 @@ public class DeliveryManager : MonoBehaviour
     public void OnArrive()
     {
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
+        destination.transform.Find("Asset").GetComponent<SpriteRenderer>().color = Color.white;
         NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
         npc.Receive();
         destination = null;
@@ -143,6 +144,7 @@ public class DeliveryManager : MonoBehaviour
     {
         destination = RandomizeDestination();
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = true;
+        destination.transform.Find("Asset").GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f);
         NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
         npc.Wait();
         SetDescriptionOnPhone();
