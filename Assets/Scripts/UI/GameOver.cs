@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public GameObject blurBackground;
+
     public TextMeshProUGUI pickUpText;
     public TextMeshProUGUI deliverText;
     public TextMeshProUGUI scoreText;
@@ -22,6 +24,8 @@ public class GameOver : MonoBehaviour
         {
             highscoreText.text = GameState.instance.highestScore.ToString();
         }
+
+        blurBackground.SetActive(true);
 
     }
     public void Retry(string mainScene)

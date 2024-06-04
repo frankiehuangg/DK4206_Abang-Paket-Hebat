@@ -3260,8 +3260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraWorld: {fileID: 2058895948}
   playerMovement: {fileID: 434609035}
-  zoomOutDuration: 3
-  speedUpDuration: 3
+  zoomOutDuration: 10
+  speedUpDuration: 10
 --- !u!114 &111784039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56489,6 +56489,10 @@ PrefabInstance:
       propertyPath: highscoreText
       value: 
       objectReference: {fileID: 1142594717}
+    - target: {fileID: 9039059233043851873, guid: a6f8e86108a8b1946bc8737c674e5707, type: 3}
+      propertyPath: blurBackground
+      value: 
+      objectReference: {fileID: 32013899}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63613,7 +63617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079152274221609105, guid: 231b266a5e100004797193e8ef6765ea, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1376373703585868075, guid: 231b266a5e100004797193e8ef6765ea, type: 3}
       propertyPath: m_LocalPosition.x
