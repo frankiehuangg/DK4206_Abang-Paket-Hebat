@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        StartGame();
+
         if (GameState.instance != null)
         {
             GameState.instance.SetMusic(mapBgm);
