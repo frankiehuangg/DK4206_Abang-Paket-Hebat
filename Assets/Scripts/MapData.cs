@@ -5,7 +5,7 @@ using UnityEngine;
 public static class MapData
 {
     public static Vector3[] HomeCubeFrontLocations = {
-        new(-30f, 1.5f, -19f),
+        new(-30f, 2f, -19f),
         new(-26f, 2f, -27f),
         new(-23f, 2f, 18f),
         new(-22f, 2f, -27f),
