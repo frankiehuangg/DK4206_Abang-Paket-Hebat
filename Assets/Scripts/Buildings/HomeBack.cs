@@ -30,7 +30,7 @@ public class HomeBack : Building
                 this.decorations[0] = "Jemuran";
                 break;
             case 4:
-                this.tembok = "Abu-abu";
+                this.tembok = "AbuGelap";
                 this.atap = "Oranye";
                 this.decorations[0] = "Tanaman";
                 this.decorations[1] = "BenderaSmall";

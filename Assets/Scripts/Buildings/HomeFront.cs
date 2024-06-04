@@ -38,7 +38,7 @@ public class HomeFront : Building
                 this.decorations[1] = "TorrenOren";
                 break;
             case 5:
-                this.tembok = "Biru";
+                this.tembok = "BiruTerang";
                 this.atap = "Biru";
                 this.decorations[0] = "Tanaman";
                 this.decorations[1] = "BenderaSmall";

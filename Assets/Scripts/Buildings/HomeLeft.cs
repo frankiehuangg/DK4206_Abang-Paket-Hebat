@@ -11,7 +11,7 @@ public class HomeLeft : Building
         switch (this.spriteIndex)
         {
             case 0:
-                this.tembok = "Biru";
+                this.tembok = "Tosca";
                 this.atap = "AbuGelap";
                 this.decorations[0] = "Jemuran";
                 this.decorations[1] = "Tanaman";

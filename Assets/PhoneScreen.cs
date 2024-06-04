@@ -59,7 +59,18 @@ public class PhoneScreen : MonoBehaviour
 
     public void SetNotification()
     {
-        phoneBackgroundImage.sprite = phoneBackground[Random.Range(1, 3)];
+        if (GameState.instance != null)
+        {
+            if (GameState.instance.language == "English")
+            {
+                phoneBackgroundImage.sprite = phoneBackground[Random.Range(3, 5)];
+            }
+            else
+            {
+                phoneBackgroundImage.sprite = phoneBackground[Random.Range(1, 3)];
+            }
+        }
+        
     }
 
     private void SetRoof()
@@ -102,17 +113,56 @@ public class PhoneScreen : MonoBehaviour
     {
         switch (buildingDescription.tembok)
         {
-            case "Coklat":
+            case "Kuning":
                 houseBodyImage.sprite = houseBodySprites[0];
                 break;
-            case "Kuning":
+            case "Putih":
                 houseBodyImage.sprite = houseBodySprites[1];
                 break;
-            case "Hijau":
+            case "BiruTerang":
                 houseBodyImage.sprite = houseBodySprites[2];
                 break;
-            case "Biru":
+            case "Hijau":
                 houseBodyImage.sprite = houseBodySprites[3];
+                break;
+            case "Biru":
+                houseBodyImage.sprite = houseBodySprites[4];
+                break;
+            case "Tosca":
+                houseBodyImage.sprite = houseBodySprites[5];
+                break;
+            case "Pink":
+                houseBodyImage.sprite = houseBodySprites[6];
+                break;
+            case "Merah":
+                houseBodyImage.sprite = houseBodySprites[7];
+                break;
+            case "Coklat":
+                houseBodyImage.sprite = houseBodySprites[8];
+                break;
+            case "Oranye":
+                houseBodyImage.sprite = houseBodySprites[9];
+                break;
+            case "AbuGelap":
+                houseBodyImage.sprite = houseBodySprites[10];
+                break;
+            case "AbuTerangTinggi":
+                houseBodyImage.sprite = houseBodySprites[11];
+                break;
+            case "OranyeTinggi":
+                houseBodyImage.sprite = houseBodySprites[12];
+                break;
+            case "HijauTinggi":
+                houseBodyImage.sprite = houseBodySprites[13];
+                break;
+            case "KuningTinggi":
+                houseBodyImage.sprite = houseBodySprites[14];
+                break;
+            case "AbuGelapTinggi":
+                houseBodyImage.sprite = houseBodySprites[15];
+                break;
+            case "PutihTinggi":
+                houseBodyImage.sprite = houseBodySprites[16];
                 break;
             default:
                 break;

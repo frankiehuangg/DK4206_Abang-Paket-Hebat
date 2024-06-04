@@ -11,20 +11,20 @@ public class TallHomeFront : Building
         switch (this.spriteIndex)
         {
             case 0:
-                this.tembok = "Abu";
+                this.tembok = "AbuTerangTinggi";
                 this.atap = "Oranye";
                 this.decorations[0] = "Tanaman";
                 this.decorations[1] = "Bel";
                 this.decorations[2] = "TorrenBiru";
                 break;
             case 1:
-                this.tembok = "Oranye";
+                this.tembok = "OranyeTinggi";
                 this.atap = "AbuGelap";
                 this.decorations[0] = "Saklar";
                 this.decorations[1] = "Bel";
                 break;
             case 2:
-                this.tembok = "Kuning";
+                this.tembok = "KuningTinggi";
                 this.atap = "AbuTerang";
                 this.decorations[0] = "Jemuran";
                 this.decorations[1] = "TorrenBiru";
