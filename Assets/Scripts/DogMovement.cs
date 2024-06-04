@@ -41,7 +41,7 @@ public class DogMovement : MonoBehaviour
         {
             playerDistance = Vector3.Distance(transform.position, playerTransform.position);
 
-            if (playerDistance < 20f)
+            if (playerDistance < 20f && deliveryManager.isDelivering)
             {
                 agent.destination = playerTransform.position;
             }
