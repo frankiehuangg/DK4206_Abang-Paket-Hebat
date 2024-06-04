@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class RenderMap : MonoBehaviour
 {
-    public GameObject[] HomeCubeFrontPrefab;
-    public GameObject[] HomeCubeBackPrefab;
-    public GameObject[] HomeCubeLeftPrefab;
-    public GameObject[] HomeCubeRightPrefab;
+    public GameObject HomeCubeFrontPrefab;
+    public GameObject HomeCubeBackPrefab;
+    public GameObject HomeCubeLeftPrefab;
+    public GameObject HomeCubeRightPrefab;
+
+    public GameObject TallHomeCubeFrontPrefab;
+    public GameObject TallHomeCubeRightPrefab;
 
     public GameObject HomeBlockFrontPrefab;
     public GameObject HomeBlockBackPrefab;
@@ -40,7 +43,17 @@ public class RenderMap : MonoBehaviour
 
         foreach (Vector3 location in MapData.HomeCubeFrontLocations)
         {
-            temp = Instantiate(HomeCubeRightPrefab[random.Next(0, HomeCubeRightPrefab.Length)], location, Quaternion.identity);
+            bool useTallSprite = UnityEngine.Random.Range(0, 100) < 20;
+
+            if (useTallSprite)
+            {
+                temp = Instantiate(TallHomeCubeRightPrefab, location, Quaternion.identity);
+            }
+            else
+            {
+                temp = Instantiate(HomeCubeRightPrefab, location, Quaternion.identity);
+            }
+
             if (random.Next(0, 3) != 0)
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
@@ -54,7 +67,8 @@ public class RenderMap : MonoBehaviour
 
         foreach (Vector3 location in MapData.HomeCubeBackLocations)
         {
-            temp = Instantiate(HomeCubeLeftPrefab[random.Next(0, HomeCubeLeftPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeLeftPrefab, location, Quaternion.identity);
+
             if (random.Next(0, 3) != 0)
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
@@ -68,7 +82,17 @@ public class RenderMap : MonoBehaviour
 
         foreach (Vector3 location in MapData.HomeCubeLeftLocations)
         {
-            temp = Instantiate(HomeCubeFrontPrefab[random.Next(0, HomeCubeFrontPrefab.Length)], location, Quaternion.identity);
+            bool useTallSprite = UnityEngine.Random.Range(0, 100) < 20;
+
+            if (useTallSprite)
+            {
+                temp = Instantiate(TallHomeCubeFrontPrefab, location, Quaternion.identity);
+            }
+            else
+            {
+                temp = Instantiate(HomeCubeFrontPrefab, location, Quaternion.identity);
+            }
+
             if (random.Next(0, 3) != 0)
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
@@ -82,7 +106,8 @@ public class RenderMap : MonoBehaviour
 
         foreach (Vector3 location in MapData.HomeCubeRightLocations)
         {
-            temp = Instantiate(HomeCubeBackPrefab[random.Next(0, HomeCubeBackPrefab.Length)], location, Quaternion.identity);
+            temp = Instantiate(HomeCubeBackPrefab, location, Quaternion.identity);
+
             if (random.Next(0, 3) != 0)
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);

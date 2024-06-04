@@ -15,6 +15,7 @@ public static class MapData
         new(-7f, 2f, -15f),
         new(-1f, 2f, 32f),
         new(5f, 2f, -22f),
+        new(5f, 2f, 19f),
         new(9f, 2f, -22f),
         new(14f, 2f, 32f),
         new(17f, 2f, 8f),
@@ -29,12 +30,12 @@ public static class MapData
     };
 
     public static Vector3[] HomeCubeBackLocations = {
+        new(-30f, 2f, -26f),
         new(-24f, 2f, -10f),
         new(-20f, 2f, -10f),
         new(-16f, 2f, -30f),
         new(-16f, 2f, 30f),
-        new(-15f, 2f, -40f),
-        new(-15f, 2f, -36f),
+        new(-13f, 2f, -10f),
         new(-12f, 2f, -30f),
         new(-10f, 2f, 30f),
         new(-8f, 2f, -30f),
@@ -56,19 +57,18 @@ public static class MapData
     };
 
     public static Vector3[] HomeCubeLeftLocations = {
-        new(-30f, 2f, -40f),
-        new(-30f, 2f, -36f),
         new(-24f, 2f, -17f),
         new(-23f, 2f, -40f),
         new(-23f, 2f, 34f),
         new(-23f, 2f, 38f),
         new(-16f, 2f, 20f),
         new(-16f, 2f, 26f),
-        new(-13f, 2f, -15f),
+        new(-15f, 2f, -40f),
+        new(-15f, 2f, -36f),
+        new(-13f, 2f, -14f),
         new(1f, 2f, 19f),
         new(4f, 2f, -18f),
         new(4f, 2f, -14f),
-        new(5f, 2f, 19f),
         new(8f, 2f, -40f),
         new(12f, 2f, 14f),
         new(22f, 2f, -15f),
@@ -77,8 +77,9 @@ public static class MapData
         new(28f, 2f, 32f),
     };
     public static Vector3[] HomeCubeRightLocations = {
+        new(-30f, 2f, -40f),
+        new(-30f, 2f, -36f),
         new(-30f, 2f, -30f),
-        new(-30f, 2f, -26f),
         new(-30f, 2f, -15f),
         new(-30f, 2f, 30f),
         new(-30f, 2f, 34f),
