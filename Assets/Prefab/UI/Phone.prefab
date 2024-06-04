@@ -280,6 +280,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82b9b861c4740554c87beebc1962d1f4, type: 3}
   - {fileID: 21300000, guid: dac49bfcd221b614eae44e1dcbc1ba73, type: 3}
   - {fileID: 21300000, guid: bbc5c66a820c25c47ad8af40eb431738, type: 3}
+  - {fileID: 21300000, guid: e4d464b34c4ce9a41849b8917927a418, type: 3}
+  - {fileID: 21300000, guid: 89c5bd4c4f1ec6145a91f9dc94fa7d7a, type: 3}
   houseRoofSprites:
   - {fileID: 21300000, guid: c1bad4a8108ea2c46a6fcb1c8f3dfc3d, type: 3}
   - {fileID: 21300000, guid: 6979270edbea42949983f1c529347e32, type: 3}
@@ -291,10 +293,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 67ae74396479a834cadfbf35a276f9d6, type: 3}
   - {fileID: 21300000, guid: 18e3c9bc89436b7469475d5ef32a8447, type: 3}
   houseBodySprites:
-  - {fileID: 21300000, guid: 0b04e6b8bec17044b853a2736a4fad0c, type: 3}
-  - {fileID: 21300000, guid: 4c0d2cc68ebd45d4e950fb02c67869e2, type: 3}
-  - {fileID: 21300000, guid: 0e3a7f6396f4c9248a16de16d071f73c, type: 3}
-  - {fileID: 21300000, guid: 2d1ba5fd71a929348a31c623034a44b9, type: 3}
+  - {fileID: 21300000, guid: b3d6e78867746044c9d742753f6c4cd7, type: 3}
+  - {fileID: 21300000, guid: 0ed12bf769df99d43b4c1ef4809c3c96, type: 3}
+  - {fileID: 21300000, guid: 55a86994987e6aa428fa4aefd606c0fc, type: 3}
+  - {fileID: 21300000, guid: 1a706a1eea7ad784fb7de7726d6be018, type: 3}
+  - {fileID: 21300000, guid: 4570f9495cef94049995db0772e73b78, type: 3}
+  - {fileID: 21300000, guid: ca3d20427e818ea42a67eb12b9513fdf, type: 3}
+  - {fileID: 21300000, guid: 0f294ff3c42181f41b6451155ffd3a4e, type: 3}
+  - {fileID: 21300000, guid: c20e0acacbd6a8648a74e9166eefe839, type: 3}
+  - {fileID: 21300000, guid: d3921dfe909f6454c868af607ac7ac10, type: 3}
+  - {fileID: 21300000, guid: b3c95b5fa1a075e419e78ae959341a58, type: 3}
+  - {fileID: 21300000, guid: db70034dcc720b54191338d7ea17043d, type: 3}
+  - {fileID: 21300000, guid: da8f9942f884931458a4d1e3d4bb38da, type: 3}
+  - {fileID: 21300000, guid: 67b021005dda9094c94fae4c66d5b227, type: 3}
+  - {fileID: 21300000, guid: 7ef3bece6cb9d224783bc9d72dcabd5d, type: 3}
+  - {fileID: 21300000, guid: dac167f7a8cb9da4aa0e563d4f95498f, type: 3}
+  - {fileID: 21300000, guid: ccd80199080e86e418c02a4fc72b92ac, type: 3}
+  - {fileID: 21300000, guid: a89761f32ce224f43afa3a1cabe1bb61, type: 3}
   houseDirectionSprites:
   - {fileID: 21300000, guid: 21ab81e119ee6e84083780194ffb4b8a, type: 3}
   - {fileID: 21300000, guid: adb9ded097491d04ebc029415059043a, type: 3}
