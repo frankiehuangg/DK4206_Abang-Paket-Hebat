@@ -260,6 +260,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 46355c675fce3d4449bc0af367d6cf90, type: 3}
   - {fileID: 21300000, guid: 609ecccd03629cf48a6ff065fc54c56d, type: 3}
   - {fileID: 21300000, guid: a1a783f7e37bbfb488e786e2e659ed1f, type: 3}
+  waitingDuration: 10
+  waitingCountdown: 0
 --- !u!1 &8205903025730442194
 GameObject:
   m_ObjectHideFlags: 0
