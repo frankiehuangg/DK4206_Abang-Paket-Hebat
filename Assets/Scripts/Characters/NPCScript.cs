@@ -12,6 +12,8 @@ public class NPCScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public int waitingDuration = 10;
     public int waitingCountdown = 0;
+    int state = 0;
+    bool receiving = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +28,14 @@ public class NPCScript : MonoBehaviour
 
     void Update()
     {
-        if(waitingCountdown < (float)waitingDuration / 3) {
-            SetMad();
-        } else if(waitingCountdown < (float)waitingDuration * 2 / 3) {
-            SetPoker();
-        } else {
-            SetHappy();
+        if (!receiving) {
+            if(waitingCountdown < (float)waitingDuration / 3) {
+                SetMad();
+            } else if(waitingCountdown < (float)waitingDuration * 2 / 3) {
+                SetPoker();
+            } else {
+                SetHappy();
+            }
         }
     }
 
@@ -43,8 +47,9 @@ public class NPCScript : MonoBehaviour
     }
 
     public void Receive() {
-        transform.Find("Thoughts").gameObject.SetActive(false);
         StopCoroutine(StartWaiting());
+        receiving = true;
+        StartCoroutine(StartReceiving());
     }
 
     private void RandomizeSprite()
@@ -61,16 +66,18 @@ public class NPCScript : MonoBehaviour
 
     public void SetHappy() {
         reaction.sprite = reactions[0];
+        state = 0;
     }
 
     public void SetPoker() {
         reaction.sprite = reactions[1];
+        state = 1;
     }
 
     public void SetMad() {
         reaction.sprite = reactions[2];
+        state = 2;
     }
-
 
 
     IEnumerator StartWaiting () {
@@ -79,5 +86,11 @@ public class NPCScript : MonoBehaviour
             yield return new WaitForSeconds (1);
             waitingCountdown--;
         }
+    }
+
+    IEnumerator StartReceiving () {
+        reaction.sprite = reactions[state + 3];
+        yield return new WaitForSeconds(2);
+        transform.Find("Thoughts").gameObject.SetActive(false);
     }
 }
