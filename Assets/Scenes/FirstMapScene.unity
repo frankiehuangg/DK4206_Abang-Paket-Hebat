@@ -3187,7 +3187,7 @@ MonoBehaviour:
   timerStarted: 0
   currentTime: 60
   countDown: 1
-  startTime: 60
+  startTime: 180
   hasLimit: 1
   timerLimit: 0
 --- !u!114 &111784036

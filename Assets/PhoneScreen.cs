@@ -66,10 +66,10 @@ public class PhoneScreen : MonoBehaviour
     {
         switch (buildingDescription.atap)
         {
-            case "Coklat":
+            case "AbuGelap":
                 houseRoofImage.sprite = houseRoofSprites[0];
                 break;
-            case "Kuning":
+            case "Putih":
                 houseRoofImage.sprite = houseRoofSprites[1];
                 break;
             case "Biru":
@@ -77,6 +77,21 @@ public class PhoneScreen : MonoBehaviour
                 break;
             case "Oranye":
                 houseRoofImage.sprite = houseRoofSprites[3];
+                break;
+            case "Coklat":
+                houseRoofImage.sprite = houseRoofSprites[4];
+                break;
+            case "Kuning":
+                houseRoofImage.sprite = houseRoofSprites[5];
+                break;
+            case "Hijau":
+                houseRoofImage.sprite = houseRoofSprites[6];
+                break;
+            case "Ungu":
+                houseRoofImage.sprite = houseRoofSprites[7];
+                break;
+            case "AbuTerang":
+                houseRoofImage.sprite = houseRoofSprites[8];
                 break;
             default:
                 break;
@@ -131,8 +146,35 @@ public class PhoneScreen : MonoBehaviour
         {
             switch (buildingDescription.decorations[i]) 
             {
-                case "Pot":
+                case "Bel":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[0];
+                    break;
+                case "BenderaSmall":
                     houseDecorationImages[i].sprite = houseDecorationSprites[1];
+                    break;
+                case "BenderaBig":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[2];
+                    break;
+                case "Gantungan":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[3];
+                    break;
+                case "Jemuran":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[4];
+                    break;
+                case "Saklar":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[5];
+                    break;
+                case "Sangkar":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[6];
+                    break;
+                case "Tanaman":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[7];
+                    break;
+                case "TorrenBiru":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[8];
+                    break;
+                case "TorrenOren":
+                    houseDecorationImages[i].sprite = houseDecorationSprites[9];
                     break;
                 default:
                     houseDecorationImages[i].color = new Color(1f, 1f, 1f, 0f);

@@ -285,6 +285,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6979270edbea42949983f1c529347e32, type: 3}
   - {fileID: 21300000, guid: 70ac2545f96071f468d8fda1bd8bf918, type: 3}
   - {fileID: 21300000, guid: 652796b3cff4d604fa54cef6095dae88, type: 3}
+  - {fileID: 21300000, guid: 2c6be1885ec82b341bb9b14902883ce3, type: 3}
+  - {fileID: 21300000, guid: 527b8079bc32a6346bb335ea4757108c, type: 3}
+  - {fileID: 21300000, guid: d46d02360a5d88d49907281bbfc71157, type: 3}
+  - {fileID: 21300000, guid: 67ae74396479a834cadfbf35a276f9d6, type: 3}
+  - {fileID: 21300000, guid: 18e3c9bc89436b7469475d5ef32a8447, type: 3}
   houseBodySprites:
   - {fileID: 21300000, guid: 0b04e6b8bec17044b853a2736a4fad0c, type: 3}
   - {fileID: 21300000, guid: 4c0d2cc68ebd45d4e950fb02c67869e2, type: 3}
@@ -296,12 +301,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb2d0cd93acad04f9a836c2c9c89749, type: 3}
   - {fileID: 21300000, guid: 2ffd4bb68913bc941958d7a64d70651b, type: 3}
   houseDecorationSprites:
-  - {fileID: 21300000, guid: d8db7483a54415c448fa46df1fb08670, type: 3}
-  - {fileID: 21300000, guid: 30d36d1496f61e04d9ada5202015745b, type: 3}
-  - {fileID: 21300000, guid: 3d56e5f293b681944b868c3054150d7b, type: 3}
-  - {fileID: 21300000, guid: d135f24624fa125419d76361e2e31603, type: 3}
-  - {fileID: 21300000, guid: 8052704a129443a44bf488e1888f5050, type: 3}
-  - {fileID: 21300000, guid: 407fc46c38d878442822626409c4fe65, type: 3}
+  - {fileID: 21300000, guid: 12a812d573933944686c94554df6f8a7, type: 3}
+  - {fileID: 21300000, guid: c5c50ea0aa2ce9f438eec02b7e339e30, type: 3}
+  - {fileID: 21300000, guid: 3c61af1dedde3814c97c7ac44910258c, type: 3}
+  - {fileID: 21300000, guid: d8025e214c447ff4689b2ad32fda2e9c, type: 3}
+  - {fileID: 21300000, guid: 0778c2bae086b6b4697b9d25e5c53021, type: 3}
+  - {fileID: 21300000, guid: 11511a0b256a9534da365982081cd6cd, type: 3}
+  - {fileID: 21300000, guid: e52802c9df8071744972fe122f0b95e5, type: 3}
+  - {fileID: 21300000, guid: 768c0d4b44719224da71e40701b5d954, type: 3}
+  - {fileID: 21300000, guid: efbd03a666c1ea74aa5245ec28a047ab, type: 3}
+  - {fileID: 21300000, guid: 9dbf0b0a75d24bc4d8cbfa9c62d51760, type: 3}
   phoneBackgroundImage: {fileID: 2161738978308075753}
   houseRoofImage: {fileID: 3213501783240912288}
   houseBodyImage: {fileID: 2375176516158381923}
