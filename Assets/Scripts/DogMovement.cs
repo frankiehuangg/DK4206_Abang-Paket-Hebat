@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +11,9 @@ public class DogMovement : MonoBehaviour
     private NavMeshAgent agent;
 
     private Animator playerAnimator;
-
+    private Animator animator;
+    private NavMeshAgent nav;
+    private SpriteRenderer sprite;
     private Vector3 spawnPoint;
 
     private float playerDistance;
@@ -18,12 +21,18 @@ public class DogMovement : MonoBehaviour
     private float minDistance = 0.5f;
 
     private bool finishedChasing = false;
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         playerAnimator = playerTransform.GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        nav = GetComponent<NavMeshAgent>();
         spawnPoint = transform.position;
+    }
+
+    void FixedUpdate() {
+        animator.SetBool("isChasing", nav.velocity != Vector3.zero);
     }
 
     void Update()
