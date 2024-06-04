@@ -10,9 +10,9 @@ public class NPCScript : MonoBehaviour
     [SerializeField] private Sprite[] reactions;
     [SerializeField] private Sprite[] npcSprites;
     private SpriteRenderer spriteRenderer;
-    public int waitingDuration = 10;
+    public int waitingDuration = 30;
     public int waitingCountdown = 0;
-    int state = 0;
+    public int state = 0;
     bool receiving = false;
     // Start is called before the first frame update
     void Start()
@@ -46,10 +46,22 @@ public class NPCScript : MonoBehaviour
         }
     }
 
-    public void Receive() {
+    public float Receive() {
         StopCoroutine(StartWaiting());
         receiving = true;
         StartCoroutine(StartReceiving());
+        if (state == 0)
+        {
+            return 1f;
+        }
+        else if (state == 1)
+        {
+            return 0.5f;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 
     private void RandomizeSprite()

@@ -130,12 +130,12 @@ public class DeliveryManager : MonoBehaviour
         destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
         destination.transform.Find("Asset").GetComponent<SpriteRenderer>().color = Color.white;
         NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
-        npc.Receive();
+        float bonusRate = npc.Receive();
         destination = null;
         StartCoroutine(SetPhoneOnArrive());
         isDelivering = false;
 
-        GameManager.instance.score += 100;
+        GameManager.instance.score += 100 + (int) bonusRate * 10;
         GameManager.instance.delivered += 1;
         GameManager.instance.coins += 10;
     }

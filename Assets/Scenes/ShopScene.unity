@@ -744,6 +744,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf473e56c685fd47a3cf3f60a7ad267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuBgm: {fileID: 0}
+  playText: {fileID: 0}
+  coinsText: {fileID: 0}
+  skillZoomOutText: {fileID: 0}
+  skillSpeedUpText: {fileID: 0}
 --- !u!1 &964235694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81db9eaa7d58c144a95245c7d615973e, type: 2}
   m_sharedMaterial: {fileID: 98452092414090689, guid: 81db9eaa7d58c144a95245c7d615973e, type: 2}
@@ -1442,7 +1447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81db9eaa7d58c144a95245c7d615973e, type: 2}
   m_sharedMaterial: {fileID: 98452092414090689, guid: 81db9eaa7d58c144a95245c7d615973e, type: 2}

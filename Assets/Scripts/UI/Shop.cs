@@ -20,14 +20,14 @@ public class Shop : MonoBehaviour
 
     public void BuyZoomOut()
     {
-        GameState.instance.coins -= 1;
+        GameState.instance.coins -= 5;
         GameState.instance.zoomOut += 1;
         GameState.instance.SaveData();
     }
 
     public void BuySpeedUp()
     {
-        GameState.instance.coins -= 1;
+        GameState.instance.coins -= 5;
         GameState.instance.speedUp += 1;
         GameState.instance.SaveData();
     }
