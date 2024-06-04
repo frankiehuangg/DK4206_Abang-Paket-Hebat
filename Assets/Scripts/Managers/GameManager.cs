@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int delivered = 0;
     public int picked = 0;
 
+    public AudioClip mapBgm;
     public Timer timer;
     public DeliveryManager deliveryManager;
     public GameObject canvasOnPlay;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         StartGame();
         if (GameState.instance != null)
         {
-            GetComponent<AudioSource>().volume = GameState.instance.musicLevel;
+            GameState.instance.SetMusic(mapBgm);
         }
     }
 

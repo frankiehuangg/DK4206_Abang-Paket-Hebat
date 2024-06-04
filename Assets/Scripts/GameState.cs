@@ -14,6 +14,7 @@ public class GameState : MonoBehaviour
     public string language { get; set; } = "English";
     public float musicLevel { get; set; } = 100;
     public float sfxLevel { get; set; } = 100;
+    public AudioSource gameBgm { get; set; }
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class GameState : MonoBehaviour
         }
         
         LoadData();
+        gameBgm = GetComponent<AudioSource>();
     }
 
     public void SaveData()
@@ -46,5 +48,15 @@ public class GameState : MonoBehaviour
         language = data.language;
         musicLevel = data.musicLevel;
         sfxLevel = data.sfxLevel;
+    }
+
+    public void SetMusic(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            gameBgm.clip = clip;
+            gameBgm.Play();
+        }
+        gameBgm.volume = musicLevel;
     }
 }

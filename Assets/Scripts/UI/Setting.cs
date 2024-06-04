@@ -52,6 +52,7 @@ public class Setting : MonoBehaviour
         {
             GameState.instance.musicLevel = musicSlider.value;
             GameState.instance.SaveData();
+            GameState.instance.SetMusic(null);
         }
     }
 

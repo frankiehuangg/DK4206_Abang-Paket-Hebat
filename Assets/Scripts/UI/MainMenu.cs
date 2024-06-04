@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioClip mainMenuBgm;
+
     public TextMeshProUGUI playText;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI skillZoomOutText;
@@ -24,7 +26,7 @@ public class MainMenu : MonoBehaviour
         coinsText.text = GameState.instance.coins.ToString();
         skillZoomOutText.text = GameState.instance.zoomOut.ToString();
         skillSpeedUpText.text = GameState.instance.speedUp.ToString();
-        GetComponent<AudioSource>().volume = GameState.instance.musicLevel;
+        GameState.instance.SetMusic(mainMenuBgm);
     }
     public void StartGame(string mainScene)
     {
