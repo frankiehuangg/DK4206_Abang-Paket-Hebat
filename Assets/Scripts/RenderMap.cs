@@ -14,8 +14,6 @@ public class RenderMap : MonoBehaviour
     public GameObject HomeBlockRightPrefab;
 
     public GameObject SmallShopFrontPrefab;
-    public GameObject SmallShopBackPrefab;
-    public GameObject SmallShopLeftPrefab;
     public GameObject SmallShopRightPrefab;
 
     public GameObject LargeShopFrontPrefab1;
