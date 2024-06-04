@@ -22,6 +22,8 @@ public class DeliveryManager : MonoBehaviour
     public Compass compass;
     public ProgressBar progressBar;
 
+    private int lastRandomIndex;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -97,7 +99,13 @@ public class DeliveryManager : MonoBehaviour
 
     GameObject RandomizeDestination()
     {
-        return possibleDestination[UnityEngine.Random.Range(0, possibleDestination.Length)];
+        int randomIndex = UnityEngine.Random.Range(0, possibleDestination.Length);
+        while (randomIndex == lastRandomIndex)
+        {
+            randomIndex = UnityEngine.Random.Range(0, possibleDestination.Length);
+        }
+        lastRandomIndex = randomIndex;
+        return possibleDestination[randomIndex];
     }
 
     private void SetDescriptionOnPhone()

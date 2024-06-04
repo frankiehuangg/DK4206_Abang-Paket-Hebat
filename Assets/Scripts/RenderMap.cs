@@ -47,7 +47,7 @@ public class RenderMap : MonoBehaviour
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
             }
-            if (MapData.destinationLocations.Contains(location))
+            if (random.Next(0, 4) == 0)
             {
                 temp.transform.gameObject.tag = "Destination";
                 temp.transform.Find("NPC").gameObject.SetActive(true);
@@ -61,7 +61,7 @@ public class RenderMap : MonoBehaviour
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
             }
-            if (MapData.destinationLocations.Contains(location))
+            if (random.Next(0, 4) == 1)
             {
                 temp.transform.gameObject.tag = "Destination";
                 temp.transform.Find("NPC").gameObject.SetActive(true);
@@ -75,7 +75,7 @@ public class RenderMap : MonoBehaviour
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
             }
-            if (MapData.destinationLocations.Contains(location))
+            if (random.Next(0, 4) == 2)
             {
                 temp.transform.gameObject.tag = "Destination";
                 temp.transform.Find("NPC").gameObject.SetActive(true);
@@ -89,7 +89,7 @@ public class RenderMap : MonoBehaviour
             {
                 temp.transform.Find("NPC").gameObject.SetActive(false);
             }
-            if (MapData.destinationLocations.Contains(location))
+            if (random.Next(0, 4) == 3)
             {
                 temp.transform.gameObject.tag = "Destination";
                 temp.transform.Find("NPC").gameObject.SetActive(true);
