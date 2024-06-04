@@ -3233,6 +3233,7 @@ MonoBehaviour:
   player: {fileID: 434609035}
   isPaused: 0
   isPlaying: 0
+  hasntMove: 1
   score: 0
   coins: 0
   delivered: 0

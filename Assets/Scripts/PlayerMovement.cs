@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (hasInput)
         {
+            GameManager.instance.PlayOnMove();
             if (endPosition.y > startPosition.y && endPosition.x > startPosition.x && branch.R)
             {
                 animator.SetBool("isMoving", true);
