@@ -6,6 +6,7 @@ using UnityEngine;
 public class RandomTreeSprite : MonoBehaviour
 {
     public Sprite[] sprites;
+    public bool forceEnable = false;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -17,7 +18,17 @@ public class RandomTreeSprite : MonoBehaviour
 
     void ChangeSprite()
     {
-        int index = UnityEngine.Random.Range(0, sprites.Length);
-        spriteRenderer.sprite = sprites[index];
+        bool useSprite = UnityEngine.Random.Range(0, 100) < 80;
+
+        if (forceEnable || useSprite)
+        {
+            int index = UnityEngine.Random.Range(0, sprites.Length);
+            spriteRenderer.sprite = sprites[index];
+        }
+        else
+        {
+            spriteRenderer.sprite = null;
+        }
+
     }
 }
