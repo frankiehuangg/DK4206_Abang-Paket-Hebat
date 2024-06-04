@@ -64,6 +64,13 @@ public class NPCScript : MonoBehaviour
         }
     }
 
+    public void Stealed() {
+        StopCoroutine(StartWaiting());
+        receiving = true;
+        state = 2;
+        StartCoroutine(StartReceiving());
+    }
+
     private void RandomizeSprite()
     {
         if (spriteRenderer != null)

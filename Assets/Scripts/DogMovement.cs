@@ -60,7 +60,7 @@ public class DogMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             finishedChasing = true;
-            deliveryManager.isDelivering = false;
+            if(deliveryManager.isDelivering) deliveryManager.OnStealed();
             playerAnimator.SetBool("isDelivering", false);
         }
     }

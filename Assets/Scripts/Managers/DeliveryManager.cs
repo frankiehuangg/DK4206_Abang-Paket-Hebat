@@ -155,6 +155,17 @@ public class DeliveryManager : MonoBehaviour
         GameManager.instance.coins += 10;
     }
 
+    public void OnStealed()
+    {
+        destination.transform.Find("Pickup").GetComponent<BoxCollider>().enabled = false;
+        destination.transform.Find("Asset").GetComponent<SpriteRenderer>().color = Color.white;
+        NPCScript npc = destination.transform.Find("NPC").gameObject.GetComponent<NPCScript>();
+        npc.Stealed();
+        destination = null;
+        SetDescriptionOnPhone();
+        isDelivering = false;
+    }
+
     public void OnFoundPackage()
     {
         destination = RandomizeDestination();
