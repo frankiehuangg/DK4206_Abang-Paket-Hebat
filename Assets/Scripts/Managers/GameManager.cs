@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         StartGame();
-       
+        if (GameState.instance != null)
+        {
+            GetComponent<AudioSource>().volume = GameState.instance.musicLevel;
+        }
     }
 
     private void Update()
