@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour
 
     public Image digitImage;
     public Sprite[] numberSprites;
-    
+
     protected int count = 0;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,8 @@ public class PowerUp : MonoBehaviour
         if (count != prevCount) SetTimerSprites();
     }
 
-    protected virtual void getCount() {
+    protected virtual void getCount()
+    {
         count = 0;
     }
 
@@ -35,7 +36,8 @@ public class PowerUp : MonoBehaviour
         digitImage.sprite = numberSprites[idx];
     }
 
-    public virtual void Activate() {
+    public virtual void Activate()
+    {
 
     }
 }
