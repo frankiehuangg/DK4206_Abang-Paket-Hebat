@@ -37,6 +37,11 @@ public class ChangeTimer : MonoBehaviour
         {
             currentTime = 0;
         }
+
+        if (GameManager.instance.hasntMove)
+        {
+            currentTime = timer.currentTime;
+        }
         
         minutes = Mathf.FloorToInt(currentTime / 60);
         seconds = Mathf.FloorToInt(currentTime % 60);

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public PlayerMovement player;
     public bool isPaused = false;
     public bool isPlaying = false;
+    public bool hasntMove = true;
     public int score = 0;
     public int coins = 0;
     public int delivered = 0;
@@ -47,10 +48,20 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         Reset();
-        deliveryManager.GameStart();
-        timer.StartTimer();
-        isPlaying = true;
         player.enabled = true;
+        timer.ResetTimer();
+    }
+
+    public void PlayOnMove()
+    {
+        if (hasntMove)
+        {
+            deliveryManager.GameStart();
+            timer.StartTimer();
+            isPlaying = true;
+            hasntMove = false;
+        }
+        
     }
 
     public void GameOver()
@@ -70,7 +81,6 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         canvasGameOver.SetActive(true);
         player.enabled = false;
-        
     }
 
     private void Reset()
@@ -79,6 +89,7 @@ public class GameManager : MonoBehaviour
         coins = 0;
         delivered = 0;
         picked = 0;
+        hasntMove = true;
     }
 
     private void SetTextOnPlay()

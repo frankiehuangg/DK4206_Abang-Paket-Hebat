@@ -3187,7 +3187,7 @@ MonoBehaviour:
   timerStarted: 0
   currentTime: 60
   countDown: 1
-  startTime: 60
+  startTime: 180
   hasLimit: 1
   timerLimit: 0
 --- !u!114 &111784036
@@ -3233,6 +3233,7 @@ MonoBehaviour:
   player: {fileID: 434609035}
   isPaused: 0
   isPlaying: 0
+  hasntMove: 1
   score: 0
   coins: 0
   delivered: 0
