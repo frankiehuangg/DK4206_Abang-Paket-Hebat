@@ -23,6 +23,7 @@ public class DeliveryManager : MonoBehaviour
     public ProgressBar progressBar;
 
     private int lastRandomIndex;
+    private int lastRandomPackage;
 
     private void Awake()
     {
@@ -85,7 +86,13 @@ public class DeliveryManager : MonoBehaviour
     {
         if (possiblePosition != null)
         {
-            Vector3 spawnPosition = possiblePosition[UnityEngine.Random.Range(0, possiblePosition.Length)].transform.position;
+            int randomIndex = UnityEngine.Random.Range(0, possiblePosition.Length);
+            while (randomIndex == lastRandomPackage)
+            {
+                randomIndex = UnityEngine.Random.Range(0, possiblePosition.Length);
+            }
+            lastRandomPackage = randomIndex;
+            Vector3 spawnPosition = possiblePosition[randomIndex].transform.position;
             spawnPosition.y = 1;
             currentPackage = Instantiate(packagePrefab, spawnPosition, Quaternion.identity);
             isSpawning = true;
