@@ -7,9 +7,11 @@ public class DogMovement : MonoBehaviour
 
     public DeliveryManager deliveryManager;
 
-    private Vector3 spawnPoint;
-
     private NavMeshAgent agent;
+
+    private Animator playerAnimator;
+
+    private Vector3 spawnPoint;
 
     private float playerDistance;
 
@@ -20,6 +22,7 @@ public class DogMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        playerAnimator = playerTransform.GetComponentInChildren<Animator>();
         spawnPoint = transform.position;
     }
 
@@ -58,6 +61,7 @@ public class DogMovement : MonoBehaviour
         {
             finishedChasing = true;
             deliveryManager.isDelivering = false;
+            playerAnimator.SetBool("isDelivering", false);
         }
     }
 }
